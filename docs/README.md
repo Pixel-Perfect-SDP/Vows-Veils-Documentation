@@ -892,3 +892,134 @@ User feedback was positive, with 100% of participants rating the website 4 or 5 
 - After user feedback is collected, tests are updated to ensure issues identified by users are addressed.
 
 ---
+
+### Manual unit tests
+
+#### Landing page unit tests
+
+| Test | What it Does | How it Works |
+|------|--------------|--------------|
+| `it('should create', ...)` | Confirms the `Landing` component is instantiated successfully | Uses `expect(component).toBeTruthy()` after TestBed setup |
+| `it('should toggle companies popup', ...)` | Verifies that the companies popup toggles on and off | Calls `toggleCompaniesPopup()` twice and checks `companiesPopup` switches between `true` and `false` |
+| `it('should call signInAndRedirect for vendor', ...)` | Ensures vendor Google sign-in works and navigates to vendor dashboard | Calls `onGoogleVendor()`, expects `mockAuth.signInWithGoogle` and `mockRouter.navigateByUrl('/vendors-company')` |
+| `it('should call signInAndRedirect for venue', ...)` | Ensures venue Google sign-in works and navigates to venue dashboard | Calls `onGoogleVenue()`, expects `mockAuth.signInWithGoogle` and `mockRouter.navigateByUrl('/manageservices')` |
+| `it('should call signInAndRedirect for admin', ...)` | Ensures admin Google sign-in works and navigates to admin dashboard | Calls `onGoogleAdmin()`, expects `mockAuth.signInWithGoogle` and `mockRouter.navigateByUrl('/admin')` |
+| `it('should handle errors in signInAndRedirect', ...)` | Confirms errors during Google sign-in are logged without crashing | Makes `signInWithGoogle` reject, calls `signInAndRedirect()`, checks `console.error` called with error |
+| `it('should have current year', ...)` | Checks that `component.year` is set correctly | Compares `component.year` to `new Date().getFullYear()` |
+
+---
+
+#### Login page unit tests
+
+| Test | What it Does | How it Works |
+|------|--------------|--------------|
+| `it('should create', ...)` | Confirms the `Login` component is instantiated successfully | Uses `expect(component).toBeTruthy()` after TestBed setup |
+| `it('should cycle images on timer', ...)` | Verifies that the image indices (`idxA`, `idxB`, `idxC`) advance on a timed interval | Calls `ngOnInit()`, advances time with `tick()`, and checks each index increments modulo its pool length |
+| `it('should handle image error correctly', ...)` | Ensures that when an image fails to load, the component skips to the next image | Calls `onImageError('A'/'B'/'C')` and checks that the corresponding index increments and wraps around the pool |
+| `it('should call auth.signUp and navigate onSignUp', ...)` | Tests that sign-up uses AuthService with correct form values | Sets form fields, calls `onSignUp()`, and checks `mockAuth.signUp` is called with email, password, and name |
+| `it('should call auth.signIn and navigate onSignIn', ...)` | Verifies that login calls AuthService with the entered credentials | Fills form with email/password, calls `onSignIn()`, and expects `mockAuth.signIn` to be called with those values |
+| `it('should reset form and call auth.signOut onSignOut', ...)` | Confirms sign-out resets the form and calls AuthService.signOut | Sets form values, calls `onSignOut()`, then checks the form is cleared and `mockAuth.signOut` was called |
+| `it('should call sendVerification onVerifyEmail', ...)` | Verifies that email verification is triggered and user is alerted | Spies on `window.alert`, calls `onVerifyEmail()`, checks `mockAuth.sendVerification` and the alert message |
+| `it('should call resetPassword onResetPassword with email', ...)` | Ensures password reset works when email is provided | Sets form email, calls `onResetPassword()`, expects `mockAuth.resetPassword` with the email and an alert shown |
+| `it('should not call resetPassword onResetPassword without email', ...)` | Prevents password reset if no email is entered | Leaves form email empty, calls `onResetPassword()`, ensures `mockAuth.resetPassword` is not called and alert shows "Enter your email first" |
+| `it('should call Google sign-in and navigate onGoogle', ...)` | Tests Google authentication is triggered | Calls `onGoogle()` and expects `mockAuth.signInWithGoogle` to be called |
+| `it('should call linkGoogle onLinkGoogle', ...)` | Confirms linking Google account works and user gets feedback | Calls `onLinkGoogle()`, expects `mockAuth.linkGoogle` and an alert saying "Google linked to your account." |
+
+---
+
+#### Manage services page unit tests
+
+| Test | What it Does | How it Works |
+|------|-------------|-------------|
+| `it('should create', ...)` | Ensures that the Angular component instance is successfully created without errors. | The test checks that the component instance exists by calling `expect(component).toBeTruthy()`. If the component fails to instantiate, the test will fail. |
+| `it('should initialize default values', ...)` | Confirms that all component properties are set to their expected initial state when the component is created. | Each property is individually checked using Jasmine's `expect` statements, for example, `expect(component.hasVenueCompany).toBeNull()`. This ensures the component starts in a predictable state. |
+| `it('should validate form fields', ...)` | Tests that the reactive form controls enforce required field validation. | The test accesses the form controls with `component.form.get('controlName')` and checks for `required` errors using `hasError('required')`. This verifies that the form will prevent submission when mandatory fields are empty. |
+| `it('should select venues option and fetch data when user is set', ...)` | Verifies that selecting the "Venues" option triggers fetching the list of venues when a user is logged in. | A spy is used on `fetchVenues()`, the component’s `select('Venues')` method is called, and the test checks that `selected` is updated and `fetchVenues` is invoked. |
+| `it('should select venues option but not fetch when no user', ...)` | Ensures that when a user selects the "Venues" option without being logged in, the component still updates the `selected` value but does not proceed with actual data fetching. | The test sets `component.user = null` to simulate no logged-in user. It spies on `fetchVenues` and calls `select('Venues')`. The expectations confirm that `selected` is updated to `'Venues'` and that `fetchVenues` is invoked, which internally handles the “no user” case by showing an alert instead of performing an API call. |
+| `it('should clear data when selecting non-venue option', ...)` | Ensures that switching to a non-venue option resets venue-related state variables. | The test sets `venues`, `editingVenue`, and `addingVenue` with sample data, then calls `select('Other')` and verifies that all venue-related properties are reset. |
+| `it('should fetch venues successfully', ...` | Confirms that the component can retrieve venue data from the backend without errors. | The test mocks `HttpClient.get()` to return sample venues. After calling `fetchVenues()` and using `tick()` to process async calls, it checks that `venues` is updated and `loading` is set to `false`. |
+| `it('should handle fetch venues error', ...` | Tests how the component handles errors when venue fetching fails. | The HTTP GET call is mocked to throw an error. The test then verifies that `console.error` is called and that `venues` remains empty, with `loading` reset to `false`. |
+| `it('should not fetch venues when no user logged in', ...)` | Ensures the component prevents fetching venues if no user is authenticated. | The test sets `component.user = null` and calls `fetchVenues()`. It checks that an alert is shown and that no HTTP request is made. |
+| `it('should start adding new venue', ...)` | Ensures the component enters "add venue" mode correctly. | Calls `AddVenue()`, which sets `addingVenue = true` and initializes `newVenueData.status` to `"pending"`. |
+| `it('should cancel adding venue', ...)` | Verifies that starting an add can be cancelled. | Sets `addingVenue = true`, then calls `CancelAdd()`. The expectation checks that `addingVenue` is reset to `false`. |
+| `it('should start editing venue', ...)` | Checks that selecting a venue for editing loads its data into the form. | Calls `UpdateVenue(mockVenue)`. The test confirms `editingVenue` is set to the passed venue and `updateData` is populated with its values. |
+| `it('should cancel venue editing', ...)` | Ensures editing can be exited without saving changes. | Initializes `editingVenue` with a mock object, then calls `CancelUpdate()`. The test confirms `editingVenue` is cleared (`null`). |
+| `it('should delete venue when confirmed', ...)` | Verifies that deleting a venue works when the user confirms. | Mocks `window.confirm` to return `true`, stubs `HttpClient.delete` to succeed, and spies on `fetchVenues`. After `DeleteVenue()`, the test checks the confirm message, the correct DELETE endpoint call, and that venues are reloaded. |
+| `it('should not delete venue when cancelled', ...)` | Ensures that cancelling a delete does not call the backend. | Mocks `window.confirm` to return `false`. The test verifies that `HttpClient.delete` is never called. |
+| `it('should handle delete venue error', ...)` | Confirms that errors during deletion are logged and surfaced to the user. | Mocks `HttpClient.delete` to throw an error, with `window.confirm` returning `true`. The test checks `console.error` is called, an alert is shown, and `loading` resets to `false`. |
+| `it('should handle file selection for new venue', ...)` | Tests file upload handling for a new venue. | Simulates a file input event, calls `onFileSelected()`, and ensures `selectedFiles` is updated with the chosen files. |
+| `it('should handle file selection for venue update', ...)` | Tests file upload handling for editing an existing venue. | Simulates a file input event, calls `onNewFilesSelected()`, and ensures `newUpdateFiles` is updated. |
+| `it('should call logout method', ...)` | Verifies the component exposes a working logout method. | Checks `logout` is defined as a function and can be called without errors. It doesn’t mock Firebase here—just ensures the method exists. |
+| `it('should toggle map visibility', ...)` | Confirms that the map display can be shown/hidden. | Checks initial `mapVisible = false`, calls `toggleMap()`, and expects it to flip to `true`. |
+| `it('should search location successfully', ...)` | Tests successful address lookup on the map. | Sets `searchAddress`, mocks `getMapData` to return a fake location, calls `searchLocation()`, and uses `tick()` to resolve async. It verifies that the data is stored in `mapData` and `mapLoading` is set to `false`. |
+| `it('should handle search location error', ...)` | Ensures the component handles failed address lookups gracefully. | Mocks `getMapData` to throw a 404 error, calls `searchLocation()`, and checks that `mapError` shows a helpful message and loading resets. |
+| `it('should not search when address is empty', ...)` | Prevents wasted map lookups on an empty string. | Sets `searchAddress = ''`, calls `searchLocation()`, and verifies no API call is made. |
+| `it('should not search when address is only whitespace', ...)` | Prevents wasted map lookups on blank/whitespace input. | Sets `searchAddress = '   '`, calls `searchLocation()`, and verifies no API call is made. |
+| `it('should set map pin', ...)` | Confirms that clicking a location on the map sets the correct pin data. | Calls `setMapPin(lat, lon, address)` and verifies `mapPin` is populated with those values. |
+| `it('should use location for new venue', ...)` | Ensures that the pinned map location can be applied to a new venue form. | Sets a mock `mapPin` and `addingVenue = true`, then calls `useLocationForVenue()`. The test checks that `newVenueData.address` is updated. |
+| `it('should return correct venue type labels', ...)` | Validates that venue type keys are mapped to human-friendly labels. | Calls `getVenueTypeLabel()` with different keys (`'hotel'`, `'event_space'`, and `'unknown'`) and verifies the expected text labels. |
+| `it('should navigate to track orders', ...)` | Ensures navigation to the order tracking page works. | Calls `trackorders()`, then checks `mockRouter.navigate` is invoked with the `['/trackorders']` route. |
+
+---
+
+#### Support page unit tests
+
+| Test | What it Does | How it Works |
+|------|--------------|--------------|
+| `it('should create', ...)` | Ensures the `SupportPage` component is successfully created | Uses `expect(component).toBeTruthy()` to confirm Angular instantiates it without errors |
+| `it('should select a section', ...)` | Checks that selecting a section updates the state properly | Calls `component.selectSection('example')`, then asserts `selectedSection` is updated and `searchTerm` is reset |
+| `it('should go back and reset section and search term', ...)` | Verifies that going back clears the selection and search term | First sets a section and search term, then calls `component.goBack()` and checks that `selectedSection` is `null` and `searchTerm` is `''` |
+| `it('matchesSearch should return true if searchTerm is empty', ...)` | Confirms that any item matches when no search term is provided | Sets `searchTerm = ''`, then calls `matchesSearch('anything')` and expects `true` |
+| `it('matchesSearch should correctly match text', ...)` | Validates case-insensitive search matching | Sets `searchTerm = 'hello'`, checks `matchesSearch('Hello')` returns `true` and `matchesSearch('Goodbye')` returns `false` |
+
+---
+#### Track orders page unit tests
+
+| Test | What it Does | How it Works |
+|------|--------------|--------------|
+| `it('should create', ...)` | Confirms component is instantiated successfully | Uses `expect(component).toBeTruthy()` |
+| `it('should initialize with default values', ...)` | Ensures `orders` starts empty and `loading` is false | Checks `orders = []` and `loading = false` after setup |
+| `it('should navigate back to manageservices', ...)` | Verifies back navigation works | Calls `component.backhome()` and expects `router.navigate(['/manageservices'])` |
+| `it('should call orders API with correct company ID', ...)` | Ensures correct API URL is called | Mocks `http.get` and checks the request URL includes `/company/test-company-id` |
+| `it('should load orders and fetch venue data', ...)` | Loads orders and resolves venue names | Stubs `http.get` for orders & venues, then checks venue name substitution |
+| `it('should handle orders with no venue selected', ...)` | Replaces empty `venueID` with default label | Mocks an order with `venueID = ''` and verifies fallback `"No venue selected"` |
+| `it('should handle venue fetch error gracefully', ...)` | Logs errors when venue fetch fails | Mocks `throwError` on venue API, spies on `console.error` |
+| `it('should handle load orders API error', ...)` | Handles failure of the main API | Returns error from orders API, checks `console.error` and `loading = false` |
+| `it('should sort orders by status priority', ...)` | Orders sorted `pending → accepted → rejected` | Provides mock data in mixed order, verifies correct ordering |
+| `it('should use fallback venue name when venue has no name', ...)` | Substitutes missing `venuename` | Returns venue object without `venuename`, expects `"No venue name"` |
+| `it('should set loading to true during loadOrders', ...)` | Confirms loading state is toggled | Calls `loadOrders` and expects `loading = true` immediately |
+| `it('should handle empty orders response', ...)` | Works with empty API response | Returns `[]`, ensures `orders = []` and `loading = false` |
+| `it('should handle multiple orders with different venues', ...)` | Resolves multiple venue names correctly | Stubs two venues, expects names `Venue One` and `Venue Two` |
+| `it('should handle orders with null or undefined note', ...)` | Handles missing notes gracefully | Returns order with `note = null`, ensures no crash |
+| `it('should update component state after successful loadOrders', ...)` | Ensures final state is consistent | Verifies orders are populated and `loading = false` |
+| `it('should handle specific HTTP error codes for venue fetch', ...)` | Logs structured error objects | Returns `{status: 404}`, checks `console.error` call |
+| `it('should handle malformed venue data gracefully', ...)` | Still processes orders with bad venue data | Returns `null` instead of venue object, ensures `orders` still populated |
+| `it('should call update status API with correct parameters', ...)` | Ensures `PUT` request is made correctly | Calls `updateStatus('order-1','accepted')`, checks request body `{status:'accepted'}` |
+| `it('should call update status API for rejection', ...)` | Confirms rejection status is sent | Calls `updateStatus('order-1','rejected')` |
+| `it('should handle update status error', ...)` | Logs errors when API call fails | Returns `throwError`, expects `console.error` |
+| `it('should handle network timeout during updateStatus', ...)` | Simulates timeout case | Returns `{name:'TimeoutError'}`, expects error log |
+
+---
+
+#### Venues page unit tests
+
+| Test | What it Does | How it Works |
+|------|--------------|--------------|
+| `it('should create', ...)` | Confirms the `Venues` component is instantiated | Uses `expect(component).toBeTruthy()` |
+| `it('should show/hide loading overlay based on loading state', ...)` | Displays loading overlay when `loading = true` and hides it when `false` | Sets `component.loading` and checks for `.loading-overlay` element in template |
+| `it('should initialize with the correct default values', ...)` | Ensures component properties are initialized | Checks `venues = []`, `recommendedVenues = []`, `selectedVenue = null`, `hasExistingOrder = false` |
+| `it('should display venues when available', ...)` | Renders venue list in the template | Assigns venues to `component.venues`, sets `loading = false`, checks `textContent` contains venue names |
+| `it('should show recommended venues when available', ...)` | Renders recommended venues section | Sets `component.recommendedVenues`, ensures template displays their names |
+| `it('should show detailed venue information when selected', ...)` | Displays full details for `selectedVenue` | Assigns a venue to `selectedVenue`, checks template `textContent` contains venue info |
+| `it('should show chosen venue information when available', ...)` | Displays the chosen venue name | Sets `chosenVenueName` and expects it to appear in template |
+| `it('should handle no chosen venue scenario', ...)` | Handles empty chosen venue gracefully | Sets `chosenVenueName = ''` and checks template |
+| `it('should handle view venue button click when venues are available', ...)` | Calls `viewVenue` on button click | Spies on `viewVenue()`, clicks `.btn`, expects spy to be called |
+| `it('should handle back to list button click when venue is selected', ...)` | Calls `backToList` on button click | Spies on `backToList()`, clicks `.btnbackToList`, expects spy to be called |
+| `it('should handle choose venue button click when venue is selected', ...)` | Calls `selectVenue` on button click | Spies on `selectVenue()`, clicks `.btnSelectVenue`, expects spy to be called |
+| `it('should handle button disabled states based on hasExistingOrder', ...)` | Verifies button states reflect `hasExistingOrder` | Sets `hasExistingOrder` and checks template behavior |
+| `it('should have homepage navigation link', ...)` | Checks homepage link exists in template | Queries `a[routerLink="/homepage"]` and checks text content |
+| `it('should display basic venue information', ...)` | Shows venue names and addresses in template | Assigns a venue to `venues` and checks `textContent` |
+| `it('should handle empty states correctly', ...)` | Handles no venues gracefully | Sets `venues = []` and ensures template reflects empty state |
+| `it('should initialize with values from the actual component', ...)` | Confirms all properties are defined on initialization | Checks `loading`, `chosenVenueName`, `venues`, `recommendedVenues`, `selectedVenue`, `hasExistingOrder` |
+
+---
