@@ -1137,16 +1137,16 @@ The audit confirms that our project is not affected by the compromised packages 
 
 #### Protecting against supply chain attacks
 
-- Use **package-lock.json** to pin versions and avoid pulling malicious updates automatically.
-- Run **npm audit** and use third-party scanners (e.g., Snyk, Socket.dev) regularly.
-- Establish **dependency review policies** before introducing new packages.
-- Where possible, rely on **trusted mirrors** (e.g., GitHub Packages).
-- Continue leveraging **Dependabot** for automated version tracking and alerts.
+- Use package-lock.json to pin versions and avoid pulling malicious updates automatically.
+- Run npm audit and use third-party scanners regularly.
+- Establish dependency review policies before introducing new packages.
+- Where possible, rely on trusted mirrors.
+- Continue leveraging Dependabot for automated version tracking and alerts.
 
 #### Protecting against local malware infection
 
 - Enforce two-factor authentication for developer and maintainer accounts.
-- Maintain **regular backups** of `package.json` and critical config files.
-- Apply **branch protection rules** to prevent broken or compromised code from reaching `main`.
-- Integrate **CI/CD pipeline security checks** to block builds if compromised dependencies are found.
-- Perform **static code analysis** and security scans before merging new code.
+- Maintain regular backups of `package.json` and critical config files.
+- Apply branch protection rules to prevent broken or compromised code from reaching `main`.
+- Integrate CI/CD pipeline security checks to block builds if compromised dependencies are found.
+- Perform static code analysis and security scans before merging new code.
