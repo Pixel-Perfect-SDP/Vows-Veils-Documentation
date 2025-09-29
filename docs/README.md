@@ -619,8 +619,9 @@ To gather user feedback, we designed a structured feedback form covering usabili
 7. Did you notice any issues? If so, what were they?
 8. Do you have any final suggestions or comments?
 9. Would you recommend our site to others or use our site again?
+10. Were there any questions that you had that were not included in the support page? (Only for sprint 3 user feedback)
 
-### Results:
+### Results for Sprint 2 User Testing:
 
 <img src="image%2032.png" alt="image" width="600">
 
@@ -680,6 +681,51 @@ To gather user feedback, we designed a structured feedback form covering usabili
 ### Integration of feedback
 
 During user testing, one of the suggestions we received was to include a weather forecast feature. This was seen as useful for users who plan their wedding through the platform, as having quick access to weather updates would support better planning. In response, we integrated a weather API into the homepage, allowing users to view real-time forecasts without leaving the site. This addition improves convenience, enhances the overall experience, and shows how user feedback was directly incorporated into the system.
+
+
+### Results for Sprint 3 User Testing:
+<img width="940" height="447" alt="image" src="https://github.com/user-attachments/assets/93f71e10-8a7d-4838-bdad-b3249573f776" />
+<img width="940" height="396" alt="image" src="https://github.com/user-attachments/assets/1c54df19-24c3-483b-b948-4a0f4aee7165" />
+<img width="940" height="447" alt="image" src="https://github.com/user-attachments/assets/65d18ce1-4bfd-4170-ab6e-2511b6a4a401" />
+<img width="940" height="402" alt="image" src="https://github.com/user-attachments/assets/da62f71f-5135-4694-8400-9f34cc34a11f" />
+<img width="940" height="396" alt="image" src="https://github.com/user-attachments/assets/31259eeb-d0b5-4262-886f-b39ca06c39dd" />
+<img width="940" height="216" alt="image" src="https://github.com/user-attachments/assets/dd11e2d2-bc39-4607-9da4-6fc4d44d4bf6" />
+<img width="940" height="396" alt="image" src="https://github.com/user-attachments/assets/e5ea6246-1736-4697-b8ac-737d1a395d13" />
+<img width="940" height="229" alt="image" src="https://github.com/user-attachments/assets/209985ba-ec24-43ac-af6d-f17957e06bf5" />
+<img width="940" height="396" alt="image" src="https://github.com/user-attachments/assets/5d5dc052-6111-489f-89d7-06798fa00c8e" />
+<img width="940" height="282" alt="image" src="https://github.com/user-attachments/assets/34373e7f-6589-4843-acb9-019a94e2d012" />
+<img width="940" height="297" alt="image" src="https://github.com/user-attachments/assets/aec062ec-fd5f-4182-aff4-29aeb88ef32a" />
+<img width="940" height="396" alt="image" src="https://github.com/user-attachments/assets/db955031-b21e-48e8-adfa-b3520473b81f" />
+<img width="940" height="232" alt="image" src="https://github.com/user-attachments/assets/c12f1d62-6929-4586-be8e-a0393ec9f7fa" />
+
+### Discussion of results for Sprint 3 User Testing
+
+**Overall Experience:** Users gave overwhelmingly positive feedback, with 100% of ratings being either 4 or 5 stars. Specifically, 60% rated the site as 5 stars and 40% as 4 stars.
+
+**Ease of use and visual appeal:**  All participants (100%) reported that the website is intuitive and easy to use. The visual appearance was also rated highly, with 80% giving it 5 stars and 20% rating it as 3 stars.
+
+**Features that users liked:**
+
+- Updated guest list management
+- RSVP portal
+- Venues filtering by price range
+- Invitation creation and loading screen design
+- General ease of use and accessibility of information
+
+**Features that users would have liked to see:**
+
+- Gift registry functionality
+- Back arrow or a clearer home button for easier navigation
+
+**Difficulties reported**
+
+- Confusion about navigating back from venues/invitations page
+- Lack of clarity in guest email input (required field but not marked clearly)
+- Ordering and vendor forms did not auto-fill date and time, requiring repetition across multiple entries
+
+**Overall Recommendation:** 100% of respondents indicated they would use Vows and Veils again or recommend it to others.
+
+
 
 ---
 
