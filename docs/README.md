@@ -1044,3 +1044,109 @@ User feedback was positive, with 100% of participants rating the website 4 or 5 
 | `it('should initialize with values from the actual component', ...)` | Confirms all properties are defined on initialization | Checks `loading`, `chosenVenueName`, `venues`, `recommendedVenues`, `selectedVenue`, `hasExistingOrder` |
 
 ---
+
+## Security audit report
+Two supply chain attacks were reported in the Node Package Manager ecosystem, affecting widely used packages such as **debug**, **chalk**, and **tinycolor**. Since our project makes use of NPM dependencies, this incident provided an opportunity to audit our codebase and ensure we are not compromised by these attacks.
+
+### Causes of the supply chain attacks
+#### Debug and Chalk attack
+- **Cause:** Malicious actors gained access to the NPM accounts of maintainers or injected malicious code through a compromised contributor account.  
+- **Point of failure:** Weak or missing multi-factor authentication on publisher accounts.  
+- **Attack method:** Injected malware designed to exfiltrate environment variables, credentials, and other sensitive data from projects that imported the affected versions.
+
+#### Tinycolor attack
+- **Cause:** A package maintainer’s account was compromised, allowing attackers to publish malicious versions of `tinycolor` and its downstream dependencies.  
+- **Point of failure:** Compromised NPM credentials and insufficient monitoring of package releases.  
+- **Attack method:** Published backdoored versions of `tinycolor` that spread into at least 40 dependent packages. The malware acted as a worm, attempting to replicate itself by stealing credentials and publishing new compromised packages.
+
+---
+
+### Compromised packages and versions
+
+#### Debug and chalk attack
+The following packages and versions were identified as compromised:
+
+
+| Package              | Compromised version |
+|----------------------|-------------------------|
+| `debug`              | 4.4.2                  |
+| `chalk`              | 5.6.1                  |
+| `ansi-styles`        | 6.2.2                  |
+| `supports-color`     | 10.2.1                 |
+| `strip-ansi`         | 7.1.1                  |
+| `ansi-regex`         | 6.2.1                  |
+| `wrap-ansi`          | 9.0.1                  |
+| `color-convert`      | 3.1.1                  |
+| `color-name`         | 2.0.1                  |
+| `is-arrayish`        | 0.3.3                  |
+| `slice-ansi`         | 7.1.1                  |
+| `color`              | 5.0.1                  |
+| `color-string`       | 2.1.1                  |
+| `simple-swizzle`     | 0.2.3                  |
+| `supports-hyperlinks`| 4.1.1                  |
+| `has-ansi`           | 6.0.1                  |
+| `chalk-template`     | 1.1.1                  |
+| `backslash`          | 0.2.1                  |
+
+#### Tinycolor attack
+The main compromised package was
+
+| Package             | Compromised version |
+|---------------------|-------------------------|
+| `@ctrl/tinycolor`   | 4.1.1                  |
+
+Other downstream packages were also impacted, including:
+- `koa2-swagger-ui@5.11.2, 5.11.1`
+- `ngx-color@10.0.2`
+- `@nativescript-community/gesturehandler@2.0.35`
+- `@nativescript-community/sentry@4.6.43`
+- `@nativescript-community/ui-image@4.5.6`
+- `@crowdstrike/commitlint@8.1.1, 8.1.2`
+
+In total, more than 40 packages were compromised, with later reporting suggesting hundreds were probed in this campaign.
+
+---
+
+### Audit of our project
+#### Package.json & lock file audit
+A team member identified that `package.json` had been accidentally deleted, causing several dependencies to fail and preventing merges to the main branch. This was corrected, and dependencies were restored.
+
+To verify whether our project was affected by the supply chain attacks, we ran
+
+`
+npm audit --json > audit-report.json
+`
+
+We also made use of dependabot.
+
+#### Audit results
+The results of running `npm audit --json > audit-report.json` are shown below,
+
+<img src="audit.png" alt="image" width="600">
+
+#### Dependabot integration
+We also used Github Dependabot, which continuously monitors our dependencies and raises pull requests when updates are available. This provides 
+- Automatic alerts if a dependency is compromised.
+- Safe, version-controlled updates with review workflows.
+- Reduced reliance on manual audits alone.
+
+#### Interpretation
+The audit confirms that our project is not affected by the compromised packages and no vulnerabilities were flagged across our dependencies. With npm audit and Dependabot in place, our exposure to similar supply chain attacks is low.
+
+### Mitigation and prevention measures
+
+#### Protecting against supply chain attacks
+
+- Use **package-lock.json** to pin versions and avoid pulling malicious updates automatically.
+- Run **npm audit** and use third-party scanners (e.g., Snyk, Socket.dev) regularly.
+- Establish **dependency review policies** before introducing new packages.
+- Where possible, rely on **trusted mirrors** (e.g., GitHub Packages).
+- Continue leveraging **Dependabot** for automated version tracking and alerts.
+
+#### Protecting against local malware infection
+
+- Enforce two-factor authentication for developer and maintainer accounts.
+- Maintain **regular backups** of `package.json` and critical config files.
+- Apply **branch protection rules** to prevent broken or compromised code from reaching `main`.
+- Integrate **CI/CD pipeline security checks** to block builds if compromised dependencies are found.
+- Perform **static code analysis** and security scans before merging new code.
