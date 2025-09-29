@@ -569,15 +569,29 @@ Invitations page → Template Selection and Change of Template
 
 ### External API
 
+#### Visual Crossing Weather API
 Our project incorporates an external API to enhance functionality and provide additional value to users. Specifically, we integrated the Visual Crossing Weather API, which delivers real-time forecasts and current weather conditions. This feature is important for the site as it supports users in planning activities and events by giving them immediate access to accurate and up-to-date weather information without leaving the platform.
 
 The integration process involved linking the homepage to the Visual Crossing Weather API endpoint to request weather data based on a specified location. The API responds in JSON format, which was then parsed to extract relevant information such as temperature, weather conditions, and forecasts. This data is dynamically rendered on the homepage, ensuring that users always see the most recent updates without needing to refresh or navigate away from the site.
 
 To achieve this, the team followed the official Visual Crossing documentation, which provided clear guidance on authentication, request parameters, and data handling. Error handling mechanisms were also implemented to ensure the system remains reliable even if the API service is temporarily unavailable. By successfully integrating the API, we added a practical and valuable feature and extended the system’s capabilities to improve the overall user experience.
 
-**References:**
+**Reference:**
 
 [https://www.visualcrossing.com/resources/documentation/weather-api/timeline-weather-api/](https://www.visualcrossing.com/resources/documentation/weather-api/timeline-weather-api/)
+
+#### Leaflet 
+Our project incorporates a second external API to enhance usability and support venue companies in efficiently finding and managing venue addresses. Specifically, we integrated the Leaflet.js Interactive Maps API, an open-source JavaScript library for maps that allows users to search, view, and select locations through an interactive interface. This feature is important for the platform as it allows a venues location to be effeciently identified and ensures accurate address information without requiring users to leave the site.
+
+The integration process involved embedding a Leaflet map into the venue management page and linking it with venue address selection. The API provides core functionality such as map initialization, zooming, panning, and the addition of markers. When a user clicks on the map, a marker is dynamically placed at the chosen coordinates, and the latitude and longitude values are stored for use in the system. Popups are also used to give users immediate visual confirmation of the selected venue address.
+
+To achieve this, the team followed the official Leaflet documentation, which offers guidance on map setup, tile layers, events, and markers. The map tiles are loaded from OpenStreetMap, ensuring the solution remains free, lightweight, and accessible. Error handling was implemented to manage cases where map tiles fail to load or when user interaction produces invalid coordinates. By successfully integrating Leaflet, we extended the system’s capabilities with a reliable, interactive mapping feature that improves the overall accuracy of venue data and enhances the user experience.
+
+**References:**
+
+[https://leafletjs.com/reference.html#map-example](https://leafletjs.com/reference.html#map-example)
+
+[https://leafletjs.com/reference.html#map-factory](https://leafletjs.com/reference.html#map-factory)
 
 ### Exposing our API
 
@@ -780,6 +794,13 @@ Updates to documents in Firestore correspond to actions in the application, such
 To improve the functionality of the site and provide added value to users, the project integrates an external service, which is the Visual Crossing Weather API. This API supplies real-time weather conditions and forecasts, which are displayed directly on the homepage. The inclusion of this feature is important because it allows users to access accurate and current weather information while using the platform. By using the weather data within the site, users have direct access and do not need to consult seperate sources, resulting in a more effecient user experience. 
 
 The integration was carried out by connecting the homepage to the Visual Crossing API endpoint and retrieving weather data in JSON format. The relevant details, such as temperature, conditions, and forecasts, are extracted and presented to users. Official API documentation was used throughout the process to guide setup, authentication, and request handling, while error-handling measures were implemented to maintain reliability in the event of service interruptions. Through this integration, our team demonstrated effective use of external resources to extend services.
+
+### Leaflet
+To improve the functionality of the site and provide added value to venue companies, we integrated an external service, which is the Leaflet.js Interactive Map API. This API enables interactive mapping features that allow venue companies to find and confirm venue addresses directly within the platform. The inclusion of this feature is important because it provides a more accurate and efficient method of selecting locations, reducing errors and eliminating the need for users to rely on separate mapping tools.
+
+The integration was carried out by embedding a Leaflet map within the venue management section of the site. The map was initialized with OpenStreetMap tiles, and interactive features such as zooming, panning, and marker placement were enabled. When a user clicks on the map, a marker is added at the selected location and the latitude/longitude coordinates are captured for storage and further use in the system. Popups provide immediate visual confirmation of the selected venue location.
+
+Official Leaflet documentation was used throughout the process to guide setup, map initialization, and event handling. Error-handling measures were also included to ensure the system remains functional in cases where map tiles fail to load or unexpected input occurs. Through this integration, our team demonstrated effective use of open-source resources to extend the system’s capabilities and provide users with a reliable, interactive mapping experience.
 
 ### Firebase Authentication
 
