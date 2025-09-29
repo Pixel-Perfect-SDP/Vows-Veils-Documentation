@@ -648,7 +648,7 @@ To gather user feedback, we designed a structured feedback form covering usabili
 <img src="image%2043.png" alt="image" width="600">
 
 
-### Discussion of results
+### Discussion of results for Sprint 2 User Testing
 
 **Overall Experience:** 100% positive ratings, users rated the website either 4 or 5 stars.
 
