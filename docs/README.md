@@ -624,7 +624,36 @@ Invitations page → Template Selection and Change of Template
 - Given that the admin is viewing a pending vendor or venue submission, when the admin selects the "Decline" option, then the system should update the status to "Declined" and remove it from the pending list.
 - Given that a non-admin user attempts to access the admin dashboard, when they attempt to sign in to the admin page, then they will be shown an error message.
 
-3. 
+3. As a venue company, I want to use an interactive map to locate and select the exact address of my venue, so that I can accurately display my venue's location when offering it on the platform.
+
+**User Acceptance Tests**
+- Given that a venue company wants to locate their venue, when they enter the address or venue name into the map searchbar, then the map should update to display the searched location with a marker indicating the position.
+- Given that a venue company can view the map, when they click on a specific point, then the system should capture and display the corresponding address in the venue form.
+- Given that the venue company has selected a location, when they click the "Save" button, then the system should store the venue's address in the database and display a confirmation message.
+
+4. As a couple planning a wedding, I want to filter available vendor services by price range and guest capacity, so that I can easily find vendors that match my budget and event size requirements.
+
+**User Acceptance Tests**
+- Given that a couple is viewing the vendors listing page, when the page loads, then they will be shown display filter controls that include "Price" and "Capacity" options.
+- Given that a couple wants to view vendors within a specific budget, when they select a price range, then the system will only display vendor services whose prices fall within that range.
+- Given that a couple wants to find vendor services suitable for their expected number of guests, when they select a capacity range, then the system should display only vendor services that can accommodate that capacity.
+- Given that the couple sets both price and capacity filters,when they apply the filters together,then the system should return vendors that meet both criteria simultaneously.
+- Given that the couple has active filters applied,when they click “Clear Filters”, then the system should remove all filters and display the full vendor list again.
+- Given that the couple applies filters that do not match any vendor services, when the system processes the request, then it should display a message informing the couple that no match was found. 
+
+5. As a couple managing my wedding guest list, I want to delete a guests from the list, so that I can remove people who are no longer attending my wedding, or were added by mistake.
+
+**User Acceptance Tests**
+- Given that a couple is viewing their guest list, when the list loads, then each guest entry should include a visible trashbin icon button next to it.
+- Given that a couple has deleted a guest, when the operation is successful, then the system should display a success message  and the updated guest list without the deleted entry.
+Given that there is a system or network error during deletion, when the couple attempts to delete a guest, then the system should display an error message and the guest should remain in the list.
+
+6. As a user of the Vows & Veils platform (couple, guest, or vendor), I want to access a support page where I can find answers to common questions, so that I can resolve any issues or questions I have while using the platform.
+
+**User Acceptance Tests**
+- Given that a user is on the Support page, when the page loads, then the system should display all available questions that are frequently asked as well as their corresponding answers.
+-  Given that a user wants to find answers quickly, when they enter a keyword or phrase into the FAQ search bar, then the system should filter and display relevant FAQ entries that match the search term.
+
 
 ### Sprint 4
 
