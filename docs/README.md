@@ -21,7 +21,12 @@
 
 ## Purpose:
 
-Vows & Veils was created to allow smooth wedding planning by providing a centralized platform for both couples and their guests. Planning a wedding can be overwhelming, with many details to manage and guests to coordinate. So, we set out to build something simple, smart, and supportive. The goal is to build a simple, intuitive site where couples can effortlessly organize every aspect of their wedding day, from guest RSVPs to budgets and vendor selections, while guests can quickly confirm attendance without any unnecessary hassle. We want to provide a seamless, all-in-one experience that keeps everything in one place, helping couples stay on track with checklists, seating plans, vendor comparisons, session details and a countdown to the big day. We focus on user-friendly design and smart features like real-time weather updates, countdown timers, and a vendor recommendation system to take the stress out of wedding planning. Whether you’re a guest attending a wedding or a couple looking to plan your big day, our platform is built to support you every step of the way.
+Vows & Veils was created to allow smooth wedding planning by providing a centralized platform for couples, their guests and wedding vendors. Planning a wedding can be overwhelming, with many details to manage and guests to coordinate. So, we set out to build a simple, smart, and supportive solution.
+
+The goal was to build a simple, intuitive site where couples could effortlessly organize every aspect of their wedding day, from guest RSVPs to venue and vendor selections, while guests can quickly confirm attendance without any unnecessary hassle. Wedding venue and vendor companies can also join Vows & Veils to showcase their offerings and allow couples to select their perfect options directly through the platform. 
+
+With Vows & Veils, everything is kept in one place to help couples stay on track. We focused on user-friendly design and smart features like real-time weather updates, countdown timers, and a venue recommendation system to take the stress out of wedding planning. 
+Whether a user is a couple planning their wedding, a guest attending an event, or a company offering services, Vows & Veils provides a centralized platform to manage and coordinate all aspects of the wedding process efficiently and effectively.
 
 ## External access links:
 
@@ -34,29 +39,36 @@ Vows & Veils was created to allow smooth wedding planning by providing a central
    
     Repository link:     
     [https://github.com/Pixel-Perfect-SDP/Vows-n-Veils?tab=readme-ov-file](https://github.com/Pixel-Perfect-SDP/Vows-n-Veils?tab=readme-ov-file)
-    
+
+
+---
+## Admin access
+Admin email address:pixelperfsdp@gmail.com
+
+Admin password: PixelPerfect123
 
 ---
 
 ## Work planning
 
-We adhere to the Scrum methodology throughout the project, utilizing Notion as our primary workspace for planning and progress tracking. The structure is organized as follows:
+We adhered to the Scrum methodology throughout the project, utilizing Notion as our primary workspace for planning and progress tracking. The structure is organized as follows:
 
 ### Scrum Board (Notion)
 
-The board comprises our product backlog, sprint backlog, and task progress tracking. It is organized by the sprint in which each task was completed and displays the team members assigned to each task as well as deadlines for tasks.
+The board comprises our product backlog, sprint backlog, and task progress tracking. It is organized by the sprint in which each task was completed and displays a short description of the task, the team members assigned to each task as well as deadlines for tasks.
 
 Link: [https://www.notion.so/23c2a298f77b8092b383e89d1aeef147?v=23c2a298f77b80b08156000cb5d7c620](https://www.notion.so/23c2a298f77b8092b383e89d1aeef147?pvs=21)
 
 ### Scrum Ceremonies (Notion)
 
-This page documents all of our Scrum ceremonies, including daily stand-ups, sprint planning, sprint retrospectives, and sprint reviews. It contains meeting notes, summaries, and key decisions made throughout the process.
+This page documents all of our Scrum ceremonies, including sprint planning, daily stand-ups, sprint retrospectives, and sprint reviews. It contains meeting notes, and key decisions made throughout the process.
 
 Link: [https://www.notion.so/Scrum-23c2a298f77b8035a54cdb1291535c77](https://www.notion.so/Scrum-23c2a298f77b8035a54cdb1291535c77?pvs=21)
 
-### Proof of Scrum **methodology**
+### Proof of Scrum Methodology
 
-<u>Sprint 1:</u>
+#### Sprint 1:
+
 We used a Notion board to track our tasks throughout the first sprint. The screenshot below shows completed tasks, demonstrating that the plan was actively used by all members of the team.
 
 <img src="image.png" alt="image" width="600">
@@ -68,8 +80,11 @@ We recorded all planning meetings for Sprint 1 in Notion. The screenshot below d
 <img src="4a25a9ac-f58e-4451-a93f-992852e9a130.png" alt="image" width="600">
 
 
-<u>Sprint 2:</u>
+#### Sprint 2:
 We continued to use a Notion board to track our tasks throughout the second sprint. The screenshot below shows completed tasks, demonstrating that the plan was actively used by all members of the team.
+
+<img src="s2TaskBoard1.png" alt="image" width="600">
+<img src="s2TaskBoard2.png" alt="image" width="600">
 
 We recorded all planning meetings for Sprint 2 in Notion. The screenshot below demonstrates that the team discussed the plan for the sprint thoroughly.
 
@@ -77,7 +92,23 @@ We recorded all planning meetings for Sprint 2 in Notion. The screenshot below d
 <img src="image%203.png" alt="image" width="600">
 <img src="image%204.png" alt="image" width="600">
 
+
+#### Sprint 3
+We continued to use a Notion board to track our tasks throughout the third sprint. The screenshot below shows completed tasks, demonstrating that the plan was actively used by all members of the team.
+<img src="s3TaskBoard1.png" alt="image" width="600">
+<img src="s3TaskBoard2.png" alt="image" width="600">
+
+We recorded all planning meetings for Sprint 3 in Notion. The screenshot below demonstrates that the team discussed the plan for the sprint thoroughly.
+
+<img src="s3Plan1.png" alt="image" width="600">
+<img src="s3Plan2.png" alt="image" width="600">
+
+
+#### Sprint 4
+
 ---
+
+
 
 ## Development Guides
 
@@ -85,43 +116,44 @@ We recorded all planning meetings for Sprint 2 in Notion. The screenshot below d
 
 1. Set up a firebase project by going to the Firebase Console and creating a new project.
 2. Configure the firestore database by navigating to the Firestore Database inside the project and creating a Firestore instance in test mode for development.
-3. Add authentication by enabling authentication methods.
-4. Get Firebase Config by navigating to the project settings and copying the Firebase SDK config object.
-5. Update the angular environment by pasting the Firebase config into the Angular project’s environment files.
+3. Add authentication by enabling authentication methods. This is done by navigating to **Authentication → Sign-in method**
+4. Get Firebase Config by navigating to the project settings and copying the Firebase SDK config object. This is done by navigating to **Project Settings → SDK Setup and Configuration**
+5. Update the angular environment by pasting the Firebase config into the Angular project’s environment files. **(src/environment/environment.ts and environment.prod.ts)**
 
 ### **Creating a development API:**
 
-1. Install Firebase CLI by running the following command: “npm install -g firebase-tools”.
-2. Login by running firebase login and then run firebase init functions in the project folder to set up Cloud functions.
-3. Develop functions locally by using “firebase emulators:start” to run functions locally for testing.
-4. Deploy to firebase using the following command: “firebase deploy –only functions”.
+1. Install Firebase CLI by running the following command: **npm install -g firebase-tools**.
+2. Login by running **firebase login**.
+3. Initialize cloud functions in the project folder by running **firebase init functions**. 
+4. Develop functions locally using the emulator by running **firebase emulators:start** to run functions locally for testing.
+5. Deploy functions to firebase using the following command: **firebase deploy –only functions**.
 
 ### **Creating a development site:**
 
-1. Clone the github repository using the following command: “git clone [https://github.com/Pixel-Perfect-SDP/Vows-n-Veils?tab=readme-ov-file](https://github.com/Pixel-Perfect-SDP/Vows-n-Veils?tab=readme-ov-file)“.
-2. Install angular dependencies by navigating to the project folder and running “npm install”.
-3. Configure the environment by ensuring that src/environments/[environment.ts](http://environments.ts/) contains the Firebase config for development.
-4. Run locally by starting the Angular dev server using “ng serve”. In the browser, open “[http://localhost:4200](http://localost:4200/)”
-5. Deploy to Azure by building the production version using “ng build –prod” and deploy the generated files to the Azure Web App.
+1. Clone the github repository using the following command: **git clone https://github.com/Pixel-Perfect-SDP/Vows-n-Veils.git**.
+2. Navigate to the project folder and install Angular dependencies by running **npm install**.
+3. Configure the environment by ensuring that **src/environments/environment.ts** contains the Firebase config for development.
+4. Run the Angular development server locally by running **ng serve**. In the browser, open “[http://localhost:4200](http://localost:4200/)”
+5. Deploy to Azure by building the production version and running **ng build –prod** and deploy the generated files to the Azure Web App.
 
 ---
 
 ## Git Methodology
 
-Our team used Git for version control to manage and collaborate on the wedding planning platform project. By following this methodology, we maintain a clean, organized, and collaborative codebase that supports efficient teamwork and reliable delivery.
+Our team used Git for version control to manage and collaborate on the wedding planning platform project. By following this methodology, we maintained a clean, organized, and collaborative codebase that supports efficient teamwork and reliable delivery.
 
 ### **Branching strategy**
 
-We follow a feature-branch workflow, where all developments for new features or enhancements will occur on dedicated branches that are separate from the main branch. This approach ensures that the main branch always contains stable, working code and allows team members to efficiently work independently.
+We followed a feature-branch workflow, where all developments for new features or enhancements occured on dedicated branches that were separate from the main branch. This approach ensures that the main branch always containd stable, working code and allowed team members to efficiently work independently.
 
-The main branch, “main” will always contain production ready code. Feature branches, for example “feature/countdown” will be used for developing and testing new features. Each feature branch will have a clear description named according to the work being done by a member. Feature branches will be named as “feature/<name>” where <name> is the feature being worked on.
+The main branch, “main” would always contain production ready code. Feature branches, for example “feature/countdown” were used for developing and testing new features. Each feature branch had a clear description named according to the work being done by a member. Feature branches were named as “feature/<name>” where <name> is the feature being worked on.
 
 **Creating and working on a branch:**
 
-1. Pull the latest changes from main by running the command “git pull origin main”.
-2. Create a new branch for a specific task by running the command “git checkout -b feature/name” 
+1. Pull the latest changes from main by running the command **git pull origin main**.
+2. Create a new branch for a specific task by running the command **git checkout -b feature/name** 
 3. Make changes and commit frequently with clear messages.
-4. Push the branch to the remote repository by running the command “git push origin feature/name”.
+4. Push the branch to the remote repository by running the command **git push origin feature/name**.
 5. Open a pull request that targets “main” and request a team review.
 6. Merge the branch into main once it has been approved.
 
@@ -131,13 +163,13 @@ The main branch, “main” will always contain production ready code. Feature b
 
 ### **Commit messages**
 
-We follow a consistent commit message style, which helps to keep the history of the project clear and meaningful. Commit messages use present tense when describing work done and changes made, include additional details if needed, reference related issues and have a single logical change. Commits are made after each logical change and not at the end of a large task.
+We followed a consistent commit message style, which helped to keep the history of the project clear and meaningful. Commit messages used present tense when describing work done and changes made, including additional details if needed, reference related issues and had a single logical change. Commits were made after each logical change and not at the end of a large task.
 
 An example of a commit message is “Add button for product update”.
 
 ### **Collaboration and code review**
 
-All code changes are made via Pull Requests. Team members review each Pull Request to ensure code quality and functionality before merging. We also use GitHub Issues to track bugs throughout the project. Any merge conflicts that arise throughout the project will be discussed and resolved between team members before pushing changes.
+All code changes were made via Pull Requests. Team members reviewed each Pull Request to ensure code quality and functionality before merging. We also used GitHub Issues to track bugs throughout the project. Any merge conflicts that arised throughout the project were discussed and resolved between team members before pushing changes.
 
 ### **Tool and resources**
 
@@ -148,17 +180,17 @@ All code changes are made via Pull Requests. Team members review each Pull Reque
 
 ## Technology Stack
 
-For this project we have selected the following technology stack:
+For this project we selected the following technology stack:
 
 ### **Frontend: Angular (with HTML, CSS, and JavaScript )**
 
 We chose to use Angular to broaden our knowledge as web application developers and to gain experience using a framework that none of our group members had previously used.
 
-After researching we found that Angular provides many different libraries that will be useful in simplifying the development process and enhancing the functionality of our application.
+After researching we found that Angular provides many different libraries that would be useful in simplifying the development process and enhancing the functionality of our application.
 
 In addition to Angular:
 
-- CSS will help greatly with the visual design and overall presentation of our web application.
+- CSS would help greatly with the visual design and overall presentation of our web application.
 - HTML is the standard language used when creating a Web App as it gives the skeleton of the web page and is an essential framework for content organization.
 - JavaScript gives the basic interactivity and dynamic behavior we will need in our web app to create a responsive and engaging user experience.
 
@@ -166,17 +198,17 @@ In addition to Angular:
 
 We chose node.js for the backend as it is one of the most widely used backend technologies, therefore ensuring a wide variety of documentation, community support, and resources available if we run into challenges throughout the project.
 
-[Node.js](http://node.js/) offers the advantage of being consistent in terms of the backend and the frontend, which both use JavaScript. There are also many packages available to use with Node.js via the npm or Node Package Manager, which provide access to several tools and libraries that will streamline development and enhance the functionality of our web application.
+**Node.js** offers the advantage of being consistent in terms of the backend and the frontend, which both use JavaScript. There are also many packages available to use with Node.js via the npm or Node Package Manager, which provide access to several tools and libraries that will streamline development and enhance the functionality of our web application.
 
 ### **Database: Firebase**
 
-We decided to use Firebase as our database for this project as many of our group members were familiar with the platform through previous projects. This prior experience allows us to work more efficiently and use existing knowledge.
+We decided to use Firebase as our database for this project as many of our group members were familiar with the platform through previous projects. This prior experience allowed us to work more efficiently and use existing knowledge.
 
-Firebase also simplifies Authentication as it provides built-in functionality that ensures security. In addition Firebase offers a centralized environment for managing the projects data collections and tables in a single centralized database.
+Firebase also simplified Authentication as it provided built-in functionality that ensured security. In addition Firebase offered a centralized environment for managing the projects data collections and tables in a single centralized database.
 
 ### **Hosting and Infrastructure: Microsoft Azure**
 
-We decided to use Microsoft Azure for the hosting and infrastructure. As students at the University of the Witwatersrand we are allocated credits which we used to deploy the static web application without additional costs.
+We decided to use Microsoft Azure for the hosting and infrastructure.. As students at the University of the Witwatersrand we are allocated credits which we used to deploy the static web application without additional costs.
 
 Our team also had prior experience using Azure and were easily able to link it to our GitHub repository as we had successfully implemented it before in previous projects.
 
@@ -186,9 +218,9 @@ Our team also had prior experience using Azure and were easily able to link it t
 
 ### **Chosen Methodology: Scrum**
 
-For this project, we have chosen to adopt the Scrum methodology, an Agile framework that is well-suited for managing complex, and evolving projects like our wedding planning platform. Scrum emphasizes iterative development, collaboration, and continuous feedback, which allows our team to maintain flexibility as the project progresses.
+For this project, we chose to adopt the Scrum methodology, an Agile framework that is well-suited for managing complex, and evolving projects like our wedding planning platform. Scrum emphasizes iterative development, collaboration, and continuous feedback, which allowed our team to maintain flexibility as the project progresses.
 
-Scrum was selected because it allows for effective teamwork through defined roles, regular ceremonies and meetings, and sprints within a certain timeframe. This structure will allow us to break down the project into manageable tasks and adapt to changes efficiently. The frequent reviews and retrospectives ensures quality and alignment with project goals throughout the development cycle.
+Scrum was selected because it allowed for effective teamwork through defined roles, regular ceremonies and meetings, and sprints within a certain timeframe. This structure allowed us to break down the project into manageable tasks and adapt to changes efficiently. The frequent reviews and retrospectives ensured quality and alignment with project goals throughout the development cycle.
 
 **Methodology references:**
 
@@ -197,11 +229,11 @@ Scrum was selected because it allows for effective teamwork through defined role
 
 ### **Tools used: Notion**
 
-We use Notion as our primary workspace for planning and tracking tasks throughout the project. Notion allows us to centralize project artifacts and allow collaboration for organization and transparency.
+We used Notion as our primary workspace for planning and tracking tasks throughout the project. Notion allowed us to centralize project artifacts and allow collaboration for organization and transparency.
 
-Our Notion board includes a product backlog and sprint backlogs, organized by sprint cycles. Each task is assigned to team members with a status which is updated as the sprint progresses. This task tracking board allows clear visibility into workload progress.
+Our Notion board includesd a product backlog and sprint backlogs, organized by sprint cycles. Each task was assigned to team members with a status which was updated as the sprint progresses. This task tracking board allowed clear visibility into workload progress.
 
-We document all Scrum ceremonies including daily stand-ups, sprint planning, sprint reviews, and sprint retrospectives on Notion. This includes meeting notes, summaries and key decisions made, which allow us to maintain accountability and facilitate continuous improvement.
+We documented all Scrum ceremonies including daily stand-ups, sprint planning, sprint reviews, and sprint retrospectives on Notion. This included meeting notes, summaries and key decisions made, which allowed us to maintain accountability and facilitate continuous improvement.
 
 **Scrum Board (Notion):**
 
@@ -213,9 +245,9 @@ We document all Scrum ceremonies including daily stand-ups, sprint planning, spr
 
 ### **Project procedure**
 
-We plan the project in timed sprints. At the start of each sprint, we hold a sprint planning meeting in order to select backlog items to complete and assign tasks to members. Daily stand-up meetings are held to synchronize team work, discuss progress and identify obstacles that team members may be facing. Tasks are regularly tracked on the Notion task board to reflect its current status and ensure accountability. At the end of the sprint, sprint reviews and sprint retrospectives allow us to demonstrate progress, gather feedback and discuss improvements for future sprints. Git and Github are used for version control, managing feature branches and collaboration on code.
+We planned the project in timed sprints. At the start of each sprint, we held a sprint planning meeting in order to select backlog items to complete and assign tasks to members for that sprint. Daily stand-up meetings were held to synchronize team work, discuss progress and identify obstacles that team members may be facing. Tasks were regularly tracked on the Notion task board to reflect its current status and ensure accountability. At the end of the sprint, sprint reviews and sprint retrospectives allowed us to demonstrate progress, gather feedback and discuss improvements for future sprints. Git and Github were used for version control, managing feature branches and collaboration on code.
 
-This structured approach allows us to deliver work iteratively and adapt to changes while still maintaining team alignment throughout the project.
+This structured approach allowed us to deliver work iteratively and adapt to changes while still maintaining team alignment throughout the project.
 
 ---
 
@@ -223,99 +255,104 @@ This structured approach allows us to deliver work iteratively and adapt to chan
 
 ### **Purpose and objective**
 
-Vows & Veils is a centralized platform that simplifies wedding planning for couples and makes RSVP management seamless for guests. Couples will be able to plan every aspect of their wedding, while guests can easily confirm attendance and provide necessary details — all without unnecessary steps or confusion.
+Vows & Veils is a centralized platform that simplifies wedding planning for couples and makes RSVP management seamless for guests. Couples can plan every aspect of their wedding, from tracking RSVPs to selecting venues and vendor services. Guests can easily confirm attendance and provide necessary details, without unnecessary steps or confusion. The platform also allows companies, such as wedding venues and vendors, to offer their services directly on the site, enabling couples and guests to select and manage services efficiently.
 
 ### **Core features**
 
 For guests:
 
 - A dedicated RSVP page that does not require signing in.
-- Input fields: Full name and surname, dietary requirements and allergies, song requests, email address and phone number, attendance confirmation (yes/no), gift registry access.
+- Input fields: Full name and surname, dietary requirements and allergies, song requests, attendance confirmation (yes/no).
 - Code entry for confirmed attendees which has been provided by the couple.
-- Automated email confirmation with wedding details.
 
 For couples:
 
 - Secure login using Google sign-in.
-- Create an event page with required fields: full names of the couple, wedding date, selected venue, gift wishlist, budget tracking, custom event URL, preferred vendors.
+- Create an event page with required fields: full names of the couple, wedding date, selected venue, budget, custom event code, preferred vendors.
 - A wedding checklist with essential tasks for couples to stay on track.
-- Seating plan builder with table-based layout for guest assignment.
-- Vendor recommendation system via an external vendor API.
+- Venue recommendation system.
 - Countdown timer to the wedding day.
 - Real-time weather updates for the venue.
+
+For companies:
+
+- Secure login using Google sign-in.
+- Create a new company with required fields: company name, contact details.
+- Add new venues or vendor services to company profile.
+- Track orders made by couples and be able to accept/reject orders.
 
 ### **Technical approach**
 
 **Frontend:**
 
-The frontend must be responsive and user friendly. It will have separate interfaces for guests and couples. It will include a guest manager which will allow couples to view RSVPs and invite guests as well as a vendor dashboard which will allow vendors to be added and to track costs.
+The frontend is responsive and user friendly. It has separate interfaces for guests, couples, and companies. It includes a guest manager which will allow couples to view RSVPs and invite guests, a guest RSVP portal which allows guests to quickly RSVP to a wedding, and company dashbaords which allow companies to add their services on to the site.
 
 **Backend and Database:**
 
-Firebase will be used for authentication and real-time data. There will be database components for guests, vendors, events and files. External APIs will be used for vendors and event metadata.
+Firebase was used for authentication and real-time data. There are database components for guests, vendors, events and files. External APIs were used for live-weather updates and venue additions for companies.
 
 API’s and integrations:
 
 - GuestList API - Add, update, and retrieve guest details and RSVP status.
-- Vendor API– Manage venues, catering, and other services
-- EventData API– Event metadata
-- Export API– Provide downloadable event packages for other apps
+- Vendor API– Manage venues, catering, and other services.
+- EventData API– Event metadata.
+- Export API– Provide downloadable event data.
 
 ### **Development roadmap**
 
-The goal of the development roadmap is to outline a clear, step-by-step approach for building the wedding planning platform from initial setup to final launch. It breaks the project into manageable phases within our sprints, ensuring that core features are developed first, followed by enhanced features and functionality. This structured approach helps maintain focus, and ensure that each goal delivers value, leading to a user-friendly platform that meets the needs of both couples and guests.
+The goal of the development roadmap was to outline a clear, step-by-step approach for building the wedding planning platform from initial setup to final launch, seperate from sprint goals. It broke the project into manageable phases within our sprints, ensuring that core features are developed first, followed by enhanced features and functionality. This structured approach helped maintain focus, and ensured that each goal delivers value, leading to a user-friendly platform that met the needs of both couples and guests.
 
 | **Phase** | **Goals** | **Deliverables** |
 | --- | --- | --- |
 | 1 - Core structure | - Firebase setup <br> - Github setup <br> - Azure deployment <br> - Google sign-in and homepage UI | Working sign-in that leads to an event creation page |
-| 2 - Event creation | - Create an event page <br> - Wedding checklist <br> - Seating plan tool | Couples can create and manage an event |
-| 3 - Enhanced features | - Countdown timer <br> - Real-time weather API <br> - Vendor API integration | Fully functional planning tools |
-| 4 - Advanced tools | - Guest list export as PDF/CSV <br> - AI recommendation engine | Advanced features added to product |
+| 2 - Event creation | - Create an event page <br> - Invitation creation page <br> - Add guests page <br>-  RSVP portal| Couples can create and manage an event |
+| 3 - Enhanced features | - Countdown timer <br> - Real-time weather API <br> - Vendor integration <br> - Venue integration| Fully functional planning tools |
+| 4 - Advanced tools | - Guest list export as PDF/CSV <br> - Venue recommendation system  <br> - Wedding checklist page <br> - Couple story page | Advanced features added to product |
 | 5 - Testing | - Bug fixes <br> - UI polish | Most features completed |
 | 6 - Launching | - Final touches | Platform is ready to launch |
 
 
-### Wireframes and Mockups
-
-<u>Login page:</u>
-
-<img src="image%205.png" alt="image" width="600" >
-<img src="image%206.png" alt="image" width="600" >
-
-<u>Landing page:</u>
-
-<img src="image%207.png" alt="image" width="600" >
-<img src="image%208.png" alt="image" width="600" >
+### **Wireframes and Mockups**
 
 <u>Couples homepage:</u>
 
 <img src="image%209.png" alt="image" width="600">
 <img src="image%2010.png" alt="image" width="600">
 
-<u>Venues for couples page:</u>
+<u>Guest list page:</u>
 
-<img src="image%2011.png" alt="image" width="600">
-<img src="image%2012.png" alt="image" width="600">
-
-<u>Vendors for couples page:</u>
-
-<img src="image%2013.png" alt="image" width="600">
-<img src="image%2014.png" alt="image" width="600">
+<img src="image%2017.png" alt="image" width="600">
+<img src="image%2018.png" alt="image" width="600">
 
 <u>Invitations page:</u>
 
 <img src="image%2015.png" alt="image" width="600">
 <img src="image%2016.png" alt="image" width="600">
 
-<u>Guest list page:</u>
+<u>Landing page:</u>
 
-<img src="image%2017.png" alt="image" width="600">
-<img src="image%2018.png" alt="image" width="600">
+<img src="image%207.png" alt="image" width="600" >
+<img src="image%208.png" alt="image" width="600" >
+
+<u>Login page:</u>
+
+<img src="image%205.png" alt="image" width="600" >
+<img src="image%206.png" alt="image" width="600" >
 
 <u>RSVP page:</u>
 
 <img src="image%2019.png" alt="image" width="600">
 <img src="image%2020.png" alt="image" width="600">
+
+<u>Story page:</u>
+
+<img src="storyw1.png" alt="image" width="600">
+<img src="storyw2.png" alt="image" width="600">
+
+<u>Support page:</u>
+
+<img src="supportw1.png" alt="image" width="600">
+<img src="supportw2.png" alt="image" width="600">
 
 <u>Vendor companies dashboard:</u>
 
@@ -327,18 +364,26 @@ The goal of the development roadmap is to outline a clear, step-by-step approach
 <img src="image%2023.png" alt="image" width="600">
 <img src="image%2024.png" alt="image" width="600">
 
+<u>Vendors for couples page:</u>
+
+<img src="image%2013.png" alt="image" width="600">
+<img src="image%2014.png" alt="image" width="600">
+
+<u>Venues for couples page:</u>
+
+<img src="image%2011.png" alt="image" width="600">
+<img src="image%2012.png" alt="image" width="600">
+
+
 
 ---
 
 ## Design documents
 
-### Sprint 1:
-
 **Deployment diagram:**
 
 <img src="image%2025.png" alt="image" width="600">
 
-### Sprint 2:
 
 Component diagram:
 
@@ -382,7 +427,7 @@ Invitations page → Template Selection and Change of Template
 
 ## User stories and their accompanying user acceptance cases
 
-### **Sprint 1:**
+### Sprint 1
 
 1. As a user who wants to plan their wedding, I am able to see short summaries of options available on the landing page so that I can quickly understand what services are offered and decide where to start.
     
@@ -400,7 +445,7 @@ Invitations page → Template Selection and Change of Template
     - Given the Google Sign-In button is visible, when I click it, then I should be directed to the Google authentication page.
     
 
-### Sprint 2:
+### Sprint 2
 
 1. As a user looking to plan my wedding, I want to be redirected to the homepage when I sign in for the first time, so that I can create my wedding by inputting required details such as names, date, and time.
 
@@ -562,6 +607,26 @@ Invitations page → Template Selection and Change of Template
 - Given I am on the guest list page, when I select a dietary requirement, then only guests matching that dietary requirement will be displayed.
 - Given I am on the guest list page, when I select an allergy filter, then only guests with that allergy will be displayed.
 - Given I am on the guest list page, when I select an RSVP status filter, then only guests with that RSVP status will be displayed.
+
+### Sprint 3
+1. As a guest looking to RSVP to a wedding, I want to enter the correct event RSVP code, so that I can access the RSVP form and fill in my details to confirm my attendance at that wedding.
+
+**User Acceptance Test**
+- Given that I am a guest and have received a valid RSVP event code for a specific wedding, when I enter the correct code on the RSVP page and submit it, then the corresponding RSVP form for that wedding event will be shown.
+- Given that I try to submit an RSVP event code for a specific wedding but I am not on the guest list, when I click the submit button, then I will see an error message informing me that my name does not match.
+- Given that I am guest and enter an invalid RSVP code, when I submit the code on the RSVP page, then I will be shown an errror message and will not be allowed access to the RSVP form.
+
+2. As an admin user, I want to review, accept, or decline venue and vendor service submissions, so that only approved and verified services are visible and available for selection on the platform.
+
+**User Acceptance Tests**
+- Given that venue or vendor companies have submitted their service details for review, when the admin logs into the admin dashboard, then the admin will be shown a list of all pending submissions with their relevant details.
+- Given that the admin is viewing a pending venue or vendor submission, when the admin selects the "Accept" option, then the system should update the vendor or venue status to "Accepted" and make the service visible on the couples pages to view.
+- Given that the admin is viewing a pending vendor or venue submission, when the admin selects the "Decline" option, then the system should update the status to "Declined" and remove it from the pending list.
+- Given that a non-admin user attempts to access the admin dashboard, when they attempt to sign in to the admin page, then they will be shown an error message.
+
+3. 
+
+### Sprint 4
 
 ---
 
