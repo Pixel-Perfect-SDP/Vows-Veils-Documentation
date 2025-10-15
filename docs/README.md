@@ -48,7 +48,7 @@ Admin email address:pixelperfsdp@gmail.com
 Admin password: PixelPerfect123
 
 ---
-
+<a id="work-planning"></a>
 ## Work planning
 
 We adhered to the Scrum methodology throughout the project, utilizing Notion as our primary workspace for planning and progress tracking. The structure is organized as follows:
