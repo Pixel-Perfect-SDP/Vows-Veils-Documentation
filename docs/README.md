@@ -19,7 +19,7 @@
 
 ---
 
-## Purpose:
+## **Purpose**
 
 Vows & Veils was created to allow smooth wedding planning by providing a centralized platform for couples, their guests and wedding vendors. Planning a wedding can be overwhelming, with many details to manage and guests to coordinate. So, we set out to build a simple, smart, and supportive solution.
 
@@ -28,7 +28,7 @@ The goal was to build a simple, intuitive site where couples could effortlessly 
 With Vows & Veils, everything is kept in one place to help couples stay on track. We focused on user-friendly design and smart features like real-time weather updates, countdown timers, and a venue recommendation system to take the stress out of wedding planning. 
 Whether a user is a couple planning their wedding, a guest attending an event, or a company offering services, Vows & Veils provides a centralized platform to manage and coordinate all aspects of the wedding process efficiently and effectively.
 
-## External access links:
+## **External Access Links**
 
 1. **Publicly hosted application**
     
@@ -42,7 +42,7 @@ Whether a user is a couple planning their wedding, a guest attending an event, o
 
 
 ---
-## Admin access
+## **Admin Access**
 Admin email address:pixelperfsdp@gmail.com
 
 Admin password: PixelPerfect123
@@ -118,7 +118,7 @@ We recorded all planning meetings for Sprint 4 in Notion. The screenshot below d
 
 
 
-## Development Guides
+## **Development Guides**
 
 ### **Creating a development database:**
 
@@ -245,11 +245,11 @@ We documented all Scrum ceremonies including daily stand-ups, sprint planning, s
 
 **Scrum Board (Notion):**
 
-[https://www.notion.so/23c2a298f77b8092b383e89d1aeef147?v=23c2a298f77b80b08156000cb5d7c620](https://www.notion.so/23c2a298f77b8092b383e89d1aeef147?pvs=21)
+[https://pinnate-diagram-9fc.notion.site/23c2a298f77b8092b383e89d1aeef147?v=23c2a298f77b80b08156000cb5d7c620&source=copy_link](https://pinnate-diagram-9fc.notion.site/23c2a298f77b8092b383e89d1aeef147?v=23c2a298f77b80b08156000cb5d7c620&source=copy_link)
 
 **Scrum Ceremonies (Notion):**
 
-[https://www.notion.so/Scrum-23c2a298f77b8035a54cdb1291535c77](https://www.notion.so/Scrum-23c2a298f77b8035a54cdb1291535c77?pvs=21).
+[https://pinnate-diagram-9fc.notion.site/Scrum-23c2a298f77b8035a54cdb1291535c77?source=copy_link](https://pinnate-diagram-9fc.notion.site/Scrum-23c2a298f77b8035a54cdb1291535c77?source=copy_link).
 
 ### **Project procedure**
 
@@ -665,6 +665,32 @@ Given that there is a system or network error during deletion, when the couple a
 
 ### Sprint 4
 
+1. As a couple using the Vows & Veils platform, I want to create a story page to share our journey and wedding details with our guests, so that our guests can learn more about us.
+
+**User Acceptance Tests**
+- Given that a couple is logged into their account, when they navigate to the Story Page section, then the system should allow them to create and customize their story page.
+- Given that the couple has added text, and event details, when they save the page, then the system should display their content in a clean and accessible layout for guests to view. 
+
+2. As an admin of the Vows & Veils platform, I want to send notifications to companies with a reason when their service is rejected, so that companies understand why and can make improvements before resubmitting.
+
+**User Acceptance Tests**
+- Given that an admin reviews a vendor’s submission, when they decide to reject it, then the system should prompt the admin to enter a reason for rejection.
+- Given that the admin submits the rejection, when the action is confirmed, then the vendor should receive a notification detailing the reason for the rejection.
+- Given that the vendor receives the notification, when they view it in their dashboard, then they should see the reason.
+
+3. As a couple using the Vows & Veils platform, I want to use a wedding checklist feature, so that I can plan and track all wedding tasks efficiently.
+
+**User Acceptance Tests**
+- Given that the couple wants to add or remove tasks, when they click “Add Task” or “Delete Task,” then the system should update the checklist accordingly.
+- Given that the couple marks a task as complete, when they check it off, then the task should be visually updated and stored as completed.
+
+4. As a user of the Vows & Veils platform, I want to interact with a chatbot, so that I can quickly get help, guidance, or answers to my questions while using the platform.
+
+**User Acceptance Tests**
+- Given that a user is on any page of the platform, when they open the chatbot icon, then the system should display a chat window ready for interaction.
+- Given that a user types a question, when they send it, then the chatbot should respond with relevant information or guidance.
+- Given that a user asks about a feature or process, when the chatbot cannot answer, then it should show an appropriate message to the user.
+
 ---
 
 ## API Integration
@@ -682,12 +708,13 @@ To achieve this, the team followed the official Visual Crossing documentation, w
 
 [https://www.visualcrossing.com/resources/documentation/weather-api/timeline-weather-api/](https://www.visualcrossing.com/resources/documentation/weather-api/timeline-weather-api/)
 
-#### Leaflet 
+#### Leaflet.js Interactive Maps API 
 Our project incorporates a second external API to enhance usability and support venue companies in efficiently finding and managing venue addresses. Specifically, we integrated the Leaflet.js Interactive Maps API, an open-source JavaScript library for maps that allows users to search, view, and select locations through an interactive interface. This feature is important for the platform as it allows a venues location to be effeciently identified and ensures accurate address information without requiring users to leave the site.
 
 The integration process involved embedding a Leaflet map into the venue management page and linking it with venue address selection. The API provides core functionality such as map initialization, zooming, panning, and the addition of markers. When a user clicks on the map, a marker is dynamically placed at the chosen coordinates, and the latitude and longitude values are stored for use in the system. Popups are also used to give users immediate visual confirmation of the selected venue address.
 
 To achieve this, the team followed the official Leaflet documentation, which offers guidance on map setup, tile layers, events, and markers. The map tiles are loaded from OpenStreetMap, ensuring the solution remains free, lightweight, and accessible. Error handling was implemented to manage cases where map tiles fail to load or when user interaction produces invalid coordinates. By successfully integrating Leaflet, we extended the system’s capabilities with a reliable, interactive mapping feature that improves the overall accuracy of venue data and enhances the user experience.
+
 
 **References:**
 
@@ -695,16 +722,24 @@ To achieve this, the team followed the official Leaflet documentation, which off
 
 [https://leafletjs.com/reference.html#map-factory](https://leafletjs.com/reference.html#map-factory)
 
+#### Hugging Face Chat Completion API
+Our project integrates the Hugging Face Chat Completion API to enhance usability and provide users with interactive, real-time support. This integration addresses earlier user feedback that the platform’s navigation was sometimes unclear. The chatbot assists couples, guests, and vendors by answering questions, guiding them through platform features, and offering quick access to information without the need to leave the site.
+
+The integration process involved connecting the platform’s chat interface to the Hugging Face API endpoint. When a user sends a message, the system transmits it to the API, which returns a context-aware and conversational response. These responses are then dynamically displayed within the chat window, creating a seamless and natural interaction experience. To ensure reliability, error handling was implemented to manage potential connectivity issues or unexpected responses from the API.
+
+The team closely followed the official Hugging Face documentation, which provides clear examples for authentication, request formatting, and response handling. Additional customization was implemented to maintain consistent styling and align the chatbot’s tone with the platform’s overall user experience.
+
+**References:**
+
+[https://huggingface.co/docs/inference-providers/en/tasks/chat-completion](https://huggingface.co/docs/inference-providers/en/tasks/chat-completion)
+
+
 ### Exposing our API
 
 Our project uses Node.js with Express to build the backend, which connects to Firebase for storing data and handling login. The backend has route files like venue.routes.js, which list the different endpoints. These endpoints let us add, update, delete, or fetch data from Firebase. To make it easier for others to understand our API, we have also added Swagger documentation, allowing them to test and see how the endpoints work.
 For deployment, we used Northflank because it is simple to set up and makes hosting the backend fast and reliable. On the frontend, Angular talks to the backend by sending requests to the Express API. With this setup, the backend handles all the data and logic, while the frontend manages what users see and interact with
 
-**VenueAPI:**
-
-Link: [https://site--vowsandveils--5dl8fyl4jyqm.code.run](https://site--vowsandveils--5dl8fyl4jyqm.code.run/venues)
-
-API documentation**:** [https://site--vowsandveils--5dl8fyl4jyqm.code.run/api-docs/](https://site--vowsandveils--5dl8fyl4jyqm.code.run/api-docs/)
+Swagger Link: [https://site–vowsandveils–5dl8fyl4jyqm.code.run/api-docs/](https://site–vowsandveils–5dl8fyl4jyqm.code.run/api-docs/)
 
 ---
 
@@ -900,6 +935,7 @@ Our database schema defines how our data is structured, stored, and accessed wit
 - **Events and Orders:** Enable couples to create events and select venues/vendors, linking all relevant information.
 - **Guests:** Store RSVP responses, dietary requirements, and song requests, which drive interactive features like guest lists and dashboards.
 - **Story** Allows couples to create their own relationship story which would then be shown to guests when they RSVP.
+- **Notifications** Allows companies to recieve notifications about the status of their service from the admin.
 - **Real-time updates:** Firestore ensures that any changes made by admins, vendors, or users are immediately reflected across the app, keeping data consistent and interactive.
 
 <img src="ds.png" alt="image" width="600">
@@ -915,6 +951,7 @@ Our database schema defines how our data is structured, stored, and accessed wit
 | Guests | Store the information about guests who have completed the RSVP form. | allergies → allergies that the guest may have <br> dietary → dietary requirements that the guest may have <br> email → email address of the guest <br> eventID → the eventID that the guest is completing an RSVP form for <br> name → name of the guest <br> RSVPstatus → indicating if the guest is attending or not <br> song → song request made by the guest |
 | Events | Store the wedding details as chosen and decided by the couple. | date_time → date and time of the wedding <br> name1 → name of the first partner <br> name2 → name of the second partner <br> RSVPcode → guests use this to RSVP to a couple's wedding <br> eventID → the userID of the person creating the event <br> vendorID → the id of the chosen vendor service <br> venueID → the id of the chosen venue service |
 | Story | Store the couple's relationship story as inputted by the couple | userID → the unique ID of the user creating the story <br> howWeMet → text as inputted by user describing how they met <br> proposal → text as inputted by the user describing their proposal <br> timeline → an array of milestones as inputted by the user  |
+|Notifications| Store notifications for companies as sent by the admin | date → the date that the notification was sent by a user <br> from → indicates the type of user that sent the notification <br> message → the actual notification <br> read → indicating if the notification has been seen by the recieving user <br> to → the userID of the person recieving the notification |
 
 
 ### Justification and reasoning
@@ -943,7 +980,7 @@ The database was deployed on Firebase Firestore and connected to the Angular fro
 
 All collections are populated with sample and real project data, demonstrating that the database structure matches the documented schema.
 
-<img src="image%2046.png" alt="image" width="600">
+<img src="proofFirebaseDeploy.png" alt="image" width="600">
 
 **Security Rules:** 
 
@@ -955,7 +992,7 @@ Access rules are configured to ensure that only authorized users can read or wri
 
 Updates to documents in Firestore correspond to actions in the application, such as creating events, adding venues, or submitting RSVP responses, showing that the database is actively supporting the application in real time.
 
-<img src="image%2048.png" alt="image" width="600">
+<img src="firebaseUse.png" alt="image" width="600">
 
 ---
 
@@ -973,6 +1010,13 @@ To improve the functionality of the site and provide added value to venue compan
 The integration was carried out by embedding a Leaflet map within the venue management section of the site. The map was initialized with OpenStreetMap tiles, and interactive features such as zooming, panning, and marker placement were enabled. When a user clicks on the map, a marker is added at the selected location and the latitude/longitude coordinates are captured for storage and further use in the system. Popups provide immediate visual confirmation of the selected venue location.
 
 Official Leaflet documentation was used throughout the process to guide setup, map initialization, and event handling. Error-handling measures were also included to ensure the system remains functional in cases where map tiles fail to load or unexpected input occurs. Through this integration, our team demonstrated effective use of open-source resources to extend the system’s capabilities and provide users with a reliable, interactive mapping experience.
+
+### Hugging Face
+To improve platform usability and provide real-time user support, we integrated the Hugging Face Chat Completion API. This API powers the platform’s chatbot feature, which helps couples, guests, and vendors navigate the site, access guidance, and receive instant answers to common questions. The inclusion of this feature was important because it enhances user experience and ensures users can find help directly within the platform without needing external assistance.
+
+The integration was implemented by connecting the chatbot interface to the Hugging Face API endpoint. When a user sends a message, the system forwards it to the API, which returns a context-aware response that is displayed in the chat window. Error-handling mechanisms were included to maintain reliability in cases of connection failures or invalid responses, ensuring smooth and uninterrupted chatbot interactions.
+
+The team utilized official Hugging Face documentation to guide the integration process, including API request formatting and response management. Alternative APIs, such as OpenAI’s GPT and Google Dialogflow, were explored; however, Hugging Face was selected for its balance of flexibility, affordability, and ease of integration. Through this integration, the team effectively improved accessibility and user support within the platform while maintaining a scalable and efficient technical solution.
 
 ### Firebase Authentication
 
@@ -1088,6 +1132,112 @@ User feedback was positive, with 100% of participants rating the website 4 or 5 
 
 ### Manual unit tests
 
+#### Admin page unit tests
+
+| Test | What it Does | How it Works |
+|------|--------------|--------------|
+| `it('should create component', ...)` | Verifies that the Admin component is successfully created | Uses `expect(comp).toBeTruthy()` after TestBed initialization |
+| `it('should initialize with empty arrays and loading states', ...)` | Ensures vendors and venues arrays start empty and loading states are false | Checks `vendors`, `venues`, `loadingVendors`, and `loadingVenues` after setup |
+| `it('should call fetchVendors and fetchVenues when user exists', ...)` | Confirms both data-fetching methods are triggered when a user is logged in | Spies on `fetchVendors` and `fetchVenues`, calls `ngOnInit()`, and verifies both are called |
+| `it('should navigate to landing when no user', ...)` | Redirects unauthenticated users to the landing page | Mocks `getUser` to return `null`, calls `ngOnInit()`, and expects navigation to `/landing` |
+| `it('should fetch vendors successfully', ...)` | Ensures vendor data loads properly from Firestore | Calls the private `fetchVendors()` method and confirms `loadingVendors` is set to `false` |
+| `it('should handle vendor fetch error', ...)` | Tests error handling for vendor fetch failures | Forces an error in `fetchVendors`, spies on `console.error`, and checks logged error |
+| `it('should fetch venues successfully', ...)` | Ensures venue data loads properly from Firestore | Calls the private `fetchVenues()` method and confirms `loadingVenues` is set to `false` |
+| `it('should handle venue fetch error', ...)` | Tests error handling for venue fetch failures | Forces an error in `fetchVenues`, spies on `console.error`, and checks logged error |
+| `it('should change vendor status to approved', ...)` | Confirms that vendor approval updates Firestore and removes vendor from list | Calls `changeStatus('Vendors', 'vendor1', 'approved')` and checks vendor is removed |
+| `it('should change venue status to rejected', ...)` | Verifies that venue rejection removes it from the local list | Calls `changeStatus('Venues', 'venue1', 'rejected')` and ensures venue is removed |
+| `it('should handle status change error for vendors', ...)` | Confirms errors during status change are handled gracefully | Forces an error in `changeStatus`, spies on `console.error`, and verifies message |
+| `it('should handle unknown collection in changeStatus', ...)` | Ensures unknown collections do not affect existing data | Calls `changeStatus` with an invalid collection and checks vendors/venues unchanged |
+| `it('should sign out and navigate to landing', ...)` | Confirms that logout clears storage and redirects to landing | Spies on `navigate`, `localStorage.clear`, and `sessionStorage.clear`, then checks calls |
+| `it('should handle logout errors gracefully', ...)` | Verifies that logout failures are caught and logged | Forces logout error and checks `console.error` output |
+| `it('should set loadingVendors to true during fetch', ...)` | Tests that the loading state updates properly while vendors are fetched | Uses a controlled Promise to verify loading flag changes before and after fetch |
+| `it('should set loadingVenues to true during fetch', ...)` | Tests that the loading state updates properly while venues are fetched | Uses a controlled Promise to verify loading flag changes before and after fetch |
+| `it('should clear arrays on ngOnDestroy', ...)` | Ensures component cleanup removes vendors and venues data | Calls `ngOnDestroy()` and verifies arrays are emptied |
+| `it('should handle empty vendor results', ...)` | Tests Firestore returning no vendors | Sets mock vendor data to empty and ensures resulting array is also empty |
+| `it('should handle empty venue results', ...)` | Tests Firestore returning no venues | Sets mock venue data to empty and ensures resulting array is also empty |
+
+---
+
+#### Chatbot unit tests
+
+| Test | What it Does | How it Works |
+|------|--------------|--------------|
+| `it('should create', ...)` | Confirms the `Chatbot` component is instantiated successfully | Uses `expect(component).toBeTruthy()` after TestBed setup |
+| `it('should call loadFAQs on initialization', ...)` | Ensures FAQ data loads when the component initializes | Spies on `loadFAQs()` and checks it's called in `ngOnInit()` |
+| `it('should log to console on init', ...)` | Verifies that console logs show chatbot initialization | Spies on `console.log` and expects `"Chatbot loaded"` message |
+| `it('should load FAQs successfully', ...)` | Checks FAQ data is fetched and messages initialized | Mocks `/assets/faq.json`, flushes mock data, and checks FAQs and greeting message |
+| `it('should handle error when loading FAQs', ...)` | Confirms chatbot handles FAQ load errors gracefully | Forces a 500 error on `/assets/faq.json` and checks fallback message |
+| `it('should toggle chat open and closed', ...)` | Ensures chat popup opens and closes correctly | Calls `toggleChat()` twice and checks `isOpen` toggles true/false |
+| `it('should toggle minimize state', ...)` | Verifies minimizing and restoring the chat window | Calls `minimizeChat()` and checks `isMinimized` toggles |
+| `it('should close chat completely', ...)` | Checks that closing resets both open and minimized states | Calls `closeChat()` and verifies `isOpen` and `isMinimized` are false |
+| `it('should add user and bot messages when FAQ selected', ...)` | Confirms correct message flow on FAQ click | Calls `selectFAQ(faq)` and checks two messages are added (user + bot) |
+| `it('should ignore empty or whitespace input', ...)` | Prevents sending blank messages | Tests `sendMessage()` with empty and whitespace-only input |
+| `it('should skip sending when isLoading is true', ...)` | Ensures no duplicate messages while waiting for response | Sets `isLoading = true` and checks no new message is added |
+| `it('should send message and find keyword match', ...)` | Confirms FAQ match detection in send flow | Sends user input with known keywords and verifies correct FAQ answer |
+| `it('should call AI search when no keyword match', ...)` | Uses AI when FAQ keywords don’t match | Spies on `findAnswerWithAI()` and checks it’s triggered correctly |
+| `it('should find FAQ by keyword or partial match', ...)` | Tests keyword and substring search in FAQs | Calls `searchByKeywords()` with variations of matching text |
+| `it('should return null for no keyword match', ...)` | Ensures no result for unrelated queries | Passes unmatched question and checks result is null |
+| `it('should handle case-insensitive matching', ...)` | Confirms matching works regardless of input casing | Calls `searchByKeywords('GUESTS')` and verifies match |
+| `it('should find best AI match from high score', ...)` | Tests Hugging Face API integration for best match | Mocks `httpClient.post` returning `{ scores: [...] }` and checks selected answer |
+| `it('should return default message when score too low', ...)` | Handles low-confidence AI results gracefully | Mocks scores below 0.3 and verifies fallback response |
+| `it('should handle AI request and subscribe errors', ...)` | Ensures chatbot recovers from API failures | Mocks `httpClient.post` to throw error and checks fallback message |
+| `it('should handle threshold (0.3) and close scores', ...)` | Tests edge AI scoring conditions | Mocks scores near threshold to verify consistent output |
+| `it('should add user message', ...)` | Ensures user message objects are added with correct fields | Calls `addUserMessage()` and checks message object contents |
+| `it('should add bot message', ...)` | Confirms bot replies are added properly | Calls `addBotMessage()` and checks message object structure |
+| `it('should send message on Enter key', ...)` | Tests keypress trigger behavior | Simulates `keypress` event and checks `sendMessage()` called |
+| `it('should ignore Shift+Enter and other keys', ...)` | Ensures multiline input and non-Enter keys are ignored | Simulates Shift+Enter and random keypresses |
+| `it('should reset messages on backtofaq', ...)` | Confirms chat reset to welcome message | Calls `backtofaq()` and checks only greeting remains |
+| `it('should handle empty FAQ arrays', ...)` | Ensures no crash when FAQ data missing | Sets `faqs = []` and verifies `searchByKeywords()` returns null |
+| `it('should handle multiple or empty keyword FAQs', ...)` | Handles complex or incomplete FAQ data | Tests keyword overlap and empty keyword lists |
+
+---
+
+#### Homepage unit tests
+
+| Test | What it Does | How it Works |
+|------|--------------|--------------|
+| `it('fills eventDisplayInfo (title, venue, time, budget, guests, vendors)', ...)` | Verifies full event information loads successfully from Firestore | Mocks Firestore docs for event, venue, guests, and vendors; checks calculated `eventDisplayInfo` fields and side effects (`updateCountdown`, `fetchVenueAndWeather`) |
+| `it('sets eventInfoError when no authenticated user', ...)` | Confirms behavior when there’s no logged-in user | Mocks `waitForUser()` to return null and ensures Firestore isn’t called and error is shown |
+| `it('sets hasEvent=false when event document is missing', ...)` | Handles missing event documents gracefully | Mocks missing event doc (`exists() = false`) and checks `hasEvent` becomes false |
+| `it('handles permission-denied when fetching vendors', ...)` | Ensures permission-denied Firestore errors don’t crash the app | Simulates permission-denied error on vendor fetch and expects `selectedVendors` to be null |
+| `it('handles missing VenueID gracefully', ...)` | Verifies missing venue IDs skip venue fetching safely | Event doc without `VenueID` ensures venue call is skipped and `venueName` remains null |
+| `it('uses fallback "Unknown Service" when vendor query is empty', ...)` | Checks fallback name logic for vendors when Firestore query returns no data | Returns empty vendor snapshot and verifies `"Unknown Service (companyID) (pending)"` used |
+| `it('sets venueName to "Venue not found" when venue document is missing', ...)` | Handles missing venue documents cleanly | Mocks missing venue doc and ensures `venueName` shows `"Venue not found"` |
+| `it('sets venueName to "Unable to load venue" when venue fetch throws', ...)` | Tests error handling for thrown venue errors | Forces rejection during venue fetch and checks fallback value and error logging |
+| `it('keeps budget and RSVP code null when not present', ...)` | Ensures optional fields are safely null when missing | Mocks event doc without `Budget` or RSVP doc and verifies both remain null |
+| `it('logs RSVP fetch error and keeps rsvpCode null', ...)` | Handles Firestore fetch errors when loading RSVP code | Forces RSVP read rejection and checks console error and null `rsvpCode` |
+| `it('sets guest counts to 0 when guest query fails', ...)` | Ensures component resets guest counts when Firestore errors occur | Throws error on guest query and verifies counts set to zero with console error |
+| `it('sets selectedVendors null when vendor query throws generic error', ...)` | Confirms fallback behavior for vendor fetch errors | Throws generic vendor read error and checks `selectedVendors` becomes null |
+| `switchToGuests` | Loads guest filter options once, but reloads guests each time tab is opened | Calls `getGuestFilterOptions` and `getGuestsByEvent`; ensures options are cached and guests refreshed on each switch |
+| `onFiltersChange` | Reloads guests using selected filter criteria | Converts form filter values to query params and calls `getGuestsByEvent` with correct `dietary`, `allergy`, and `rsvp` values |
+| `submitAddGuest: validation error` | Ensures invalid form doesn’t submit | Leaves required fields empty and verifies `postGuest` is not called |
+| `submitAddGuest: happy path` | Posts valid guest, refreshes guests, and closes add form | Fills form, trims whitespace, converts RSVP string to boolean, calls `postGuest`, refreshes guest list, and closes form |
+| `onDeleteGuest: cancel path` | Verifies deletion canceled if user declines | `window.confirm` returns false; ensures `deleteGuest` not called |
+| `onDeleteGuest: confirm path` | Deletes guest, refreshes list, and alerts success | `window.confirm` returns true; calls `deleteGuest`, refreshes guests, alerts success, clears loading |
+| `onDeleteGuest: error path` | Handles delete errors gracefully | Simulates `deleteGuest` throwing; shows alert with error and clears loading |
+| `onDeleteGuest: missing id` | Prevents deletion when guest id missing | Calls `window.alert` and returns early; `deleteGuest` not called |
+
+---
+
+#### Invitations page unit tests
+
+| Test Block | What it Tests | Key Points |
+|------------|---------------|-----------|
+| `getVenueName` | Resolves venue name from Firestore or string, handles nulls | Handles `DocumentReference`, string IDs, missing venue, and missing `venuename` |
+| `loadDefaultsFromEvent user load` | Early exit if no user, normal flow if user exists | Uses `waitForUser` spy; ensures form not modified if user missing |
+| `backTohome` | Navigation function | Ensures `router.navigate(['/homepage'])` is called |
+| `saveInvitation` | Handles early exits | Exits if no template selected or form invalid; waits for user |
+| `downloadCanvasPNG` | Generates PNG from template and photo | Skips if no template, calls `loadImage` and `drawRoundedImage` when template present; triggers download |
+| `loadImage` | Loads image asynchronously | Resolves on successful load, rejects on error |
+| `choose` | Template selection | Sets `component.selected` to chosen template |
+| `onPhotoChange` | Handles file input change | Sets `photoUrl`, revokes previous URL, ignores if no file |
+| `ngOnInit` | Initialization flow | Exits if no user; hydrates invitation if Firestore snap exists (commented-out test) |
+| `saveInvitation full` | Exits on invalid form or missing user | `hasInvite` remains `null` |
+| `downloadCanvasPNG fallbacks` | Handles background image load failure | Uses plain fallback if `bg` load fails; ensures canvas drawing and URL creation |
+| `drawRoundedImage` (commented-out) | Draws rounded image on canvas | Ensures all canvas path and drawing methods called correctly |
+
+---
+
 #### Landing page unit tests
 
 | Test | What it Does | How it Works |
@@ -1152,6 +1302,42 @@ User feedback was positive, with 100% of participants rating the website 4 or 5 
 | `it('should use location for new venue', ...)` | Ensures that the pinned map location can be applied to a new venue form. | Sets a mock `mapPin` and `addingVenue = true`, then calls `useLocationForVenue()`. The test checks that `newVenueData.address` is updated. |
 | `it('should return correct venue type labels', ...)` | Validates that venue type keys are mapped to human-friendly labels. | Calls `getVenueTypeLabel()` with different keys (`'hotel'`, `'event_space'`, and `'unknown'`) and verifies the expected text labels. |
 | `it('should navigate to track orders', ...)` | Ensures navigation to the order tracking page works. | Calls `trackorders()`, then checks `mockRouter.navigate` is invoked with the `['/trackorders']` route. |
+
+---
+
+#### Notifications unit tests
+
+| Test Block | What it Tests | Key Points |
+|------------|---------------|-----------|
+| Component creation & defaults | Component initializes correctly | `notifications` empty, `loading` false, `user` set |
+| `ngOnInit` no user | Handles absence of logged-in user | Logs warning, does not fetch notifications, `loading` false |
+| `ngOnInit` fetch notifications | Loads notifications from API | Fetches via HttpClient, sets `notifications`, `loading` false |
+| Sorting notifications | Ensures unread first | Notifications array sorted with unread (`read=false`) first |
+| Mark unread as read | Marks unread notifications via API | Calls `put` for each unread notification; read notifications ignored |
+| Date conversion | Handles Firebase Timestamps, string dates, null/undefined | All notifications get valid `Date` objects |
+| Error handling fetch | API errors during fetch | Logs error, clears `loading` |
+| Error handling mark-read | API errors when marking notifications | Logs error, does not break execution |
+| Empty or undefined notifications | Handles empty array or missing notifications | `notifications` becomes empty, no mark-read calls |
+| Loading state | Properly sets `loading` during fetch | `loading` true while fetching, false after |
+| Navigation `backhome` | Navigates using history state or fallback | Uses `navigateByUrl` if history exists, else `navigate` to `/landing` |
+| Multiple notifications | Handles multiple unread notifications | All unread notifications marked as read; order preserved |
+| Incomplete/missing properties | Notifications missing `from`, `message`, or `date` | Still creates valid Date; properties may be undefined |
+| Mixed read/unread sorting | Maintains correct order | Unread first, read last |
+| No unread notifications | Skip marking read | `put` not called for already read notifications |
+| Network errors | Handles fetch/mark-read failures gracefully | Logs errors, maintains correct `loading` state |
+
+---
+
+#### RSVP page unit tests
+
+| Test | What it Does | How it Works |
+|------|--------------|--------------|
+| `it('should handle guest found and update Firestore document', ...)` | Confirms that a guest is correctly found and their RSVP details are updated in Firestore | Mocks Firestore’s `getDocs` to return a matching guest, calls `onSubmit()`, and checks that `updateDoc` runs, alerts success, and updates the success message |
+| `it('should handle guest not found path correctly', ...)` | Ensures proper handling when the entered guest name does not exist in Firestore | Mocks `getDocs` to return empty, calls `onSubmit()`, and verifies an alert and message indicating the guest is not part of the wedding party |
+| `it('should handle Firestore errors gracefully', ...)` | Verifies that the component handles Firestore errors without crashing | Forces `getDocs` to throw an error, calls `onSubmit()`, and checks that the error message `'Something went wrong'` is displayed |
+| `it('should handle Event Code found and story exists', ...)` | Confirms correct logic when a valid Event Code and Story record are found | Simulates two Firestore calls (for Event and Story), calls `submitEventCode()`, and ensures `eventIdEntered` is `true` and `storyData` contains the story |
+| `it('should handle Event Code not found', ...)` | Ensures proper feedback when an invalid Event Code is entered | Mocks `getDocs` to return empty, calls `submitEventCode()`, and verifies alert message `'Event Code not found'` and failure message `'Event Code not found'` |
+| `it('should handle Firestore error during event code lookup', ...)` | Tests that Firestore errors during Event Code lookup are caught and reported | Forces `getDocs` to throw an error, calls `submitEventCode()`, and checks that `component.message` is `'Error checking Event Code'` |
 
 ---
 
