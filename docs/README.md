@@ -57,13 +57,13 @@ We adhered to the Scrum methodology throughout the project, utilizing Notion as 
 
 The board comprises our product backlog, sprint backlog, and task progress tracking. It is organized by the sprint in which each task was completed and displays a short description of the task, the team members assigned to each task as well as deadlines for tasks.
 
-Link: [https://www.notion.so/23c2a298f77b8092b383e89d1aeef147?v=23c2a298f77b80b08156000cb5d7c620](https://www.notion.so/23c2a298f77b8092b383e89d1aeef147?pvs=21)
+Link: [https://pinnate-diagram-9fc.notion.site/23c2a298f77b8092b383e89d1aeef147?v=23c2a298f77b80b08156000cb5d7c620&source=copy_link](https://pinnate-diagram-9fc.notion.site/23c2a298f77b8092b383e89d1aeef147?v=23c2a298f77b80b08156000cb5d7c620&source=copy_link)
 
 ### Scrum Ceremonies (Notion)
 
 This page documents all of our Scrum ceremonies, including sprint planning, daily stand-ups, sprint retrospectives, and sprint reviews. It contains meeting notes, and key decisions made throughout the process.
 
-Link: [https://www.notion.so/Scrum-23c2a298f77b8035a54cdb1291535c77](https://www.notion.so/Scrum-23c2a298f77b8035a54cdb1291535c77?pvs=21)
+Link: [https://pinnate-diagram-9fc.notion.site/Scrum-23c2a298f77b8035a54cdb1291535c77?source=copy_link](https://pinnate-diagram-9fc.notion.site/Scrum-23c2a298f77b8035a54cdb1291535c77?source=copy_link)
 
 ### Proof of Scrum Methodology
 
@@ -105,6 +105,14 @@ We recorded all planning meetings for Sprint 3 in Notion. The screenshot below d
 
 
 #### Sprint 4
+We continued to use a Notion board to track our tasks throughout the fourth sprint. The screenshot below shows completed tasks, demonstrating that the plan was actively used by all members of the team.
+
+<img src="s4TaskBoard.png" alt="image" width="600">
+
+We recorded all planning meetings for Sprint 4 in Notion. The screenshot below demonstrates that the team discussed the plan for the sprint thoroughly.
+
+<img src="s4Plan1.png" alt="image" width="600">
+<img src="s4Plan2.png" alt="image" width="600">
 
 ---
 
