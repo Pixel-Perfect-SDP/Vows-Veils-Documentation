@@ -938,7 +938,7 @@ Our database schema defines how our data is structured, stored, and accessed wit
 - **Notifications** Allows companies to recieve notifications about the status of their service from the admin.
 - **Real-time updates:** Firestore ensures that any changes made by admins, vendors, or users are immediately reflected across the app, keeping data consistent and interactive.
 
-<img src="ds.png" alt="image" width="600">
+<img src="dsNew.png" alt="image" width="600">
 
 | **Collection** | **Description** | **Documents** |
 | --- | --- | --- |
