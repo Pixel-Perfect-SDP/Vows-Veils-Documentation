@@ -1477,10 +1477,12 @@ npm audit --json > audit-report.json
 
 We also made use of dependabot.
 
+
 #### Audit results
 The results of running `npm audit --json > audit-report.json` are shown below,
 
 <img src="audit.png" alt="image" width="600">
+
 
 #### Dependabot integration
 We also used Github Dependabot, which continuously monitors our dependencies and raises pull requests when updates are available. This provides 
@@ -1488,8 +1490,25 @@ We also used Github Dependabot, which continuously monitors our dependencies and
 - Safe, version-controlled updates with review workflows.
 - Reduced reliance on manual audits alone.
 
+Towards the end of our project, Dependabot identified a high-risk security issue in @angular/ssr, a package used in
+ the frontend for server-side rendering. The vulnerability was a Server-Side Request Forgery (SSRF) flaw in the URL
+ resolution mechanism, which could allow an attacker to trick the server into making unintended HTTP requests. This
+ occurred because the package’s URL constructor could interpret paths starting with double slashes as attacker-controlled
+ URLs. If left unpatched, it could have affected the security of server-rendered pages and potentially exposed sensitive
+ internal endpoints. Dependabot automatically proposed a security update to upgrade @angular/ssr to a fixed version,  which we merged promptly. The team felt reassured knowing that a critical vulnerability was detected and addressed
+ before it could impact the project, highlighting the value of continuous dependency monitoring.
+
+
 #### Interpretation
 The audit confirms that our project is not affected by the compromised packages and no vulnerabilities were flagged across our dependencies. With npm audit and Dependabot in place, our exposure to similar supply chain attacks is low.
+
+ The security audit was an insightful and educational experience for our team. It highlighted the growing threat of supply
+ chain attacks and the importance of proactive dependency management. Initially, resolving missing files and performing
+ the audit was time-consuming, but it strengthened our understanding of secure development practices. The team felt
+ reassured after confirming that our project was not affected and proud to have implemented long-term security measures
+ that enhance the overall resilience of our system. The detection and timely fixing of the Angular SSRF vulnerability by
+ Dependabot further emphasized the importance of continuous monitoring, giving the team confidence in the security of
+ the deployed application.
 
 ### Mitigation and prevention measures
 
