@@ -49,7 +49,7 @@ Admin password: PixelPerfect123
 
 ---
 <a id="work-planning"></a>
-## Work planning
+## **Work planning**
 
 We adhered to the Scrum methodology throughout the project, utilizing Notion as our primary workspace for planning and progress tracking. The structure is organized as follows:
 
@@ -120,7 +120,7 @@ We recorded all planning meetings for Sprint 4 in Notion. The screenshot below d
 
 ## **Development Guides**
 
-### **Creating a development database:**
+### Creating a development database:
 
 1. Set up a firebase project by going to the Firebase Console and creating a new project.
 2. Configure the firestore database by navigating to the Firestore Database inside the project and creating a Firestore instance in test mode for development.
@@ -128,7 +128,7 @@ We recorded all planning meetings for Sprint 4 in Notion. The screenshot below d
 4. Get Firebase Config by navigating to the project settings and copying the Firebase SDK config object. This is done by navigating to **Project Settings → SDK Setup and Configuration**
 5. Update the angular environment by pasting the Firebase config into the Angular project’s environment files. **(src/environment/environment.ts and environment.prod.ts)**
 
-### **Creating a development API:**
+### Creating a development API:
 
 1. Install Firebase CLI by running the following command: **npm install -g firebase-tools**.
 2. Login by running **firebase login**.
@@ -136,7 +136,7 @@ We recorded all planning meetings for Sprint 4 in Notion. The screenshot below d
 4. Develop functions locally using the emulator by running **firebase emulators:start** to run functions locally for testing.
 5. Deploy functions to firebase using the following command: **firebase deploy –only functions**.
 
-### **Creating a development site:**
+### Creating a development site:
 
 1. Clone the github repository using the following command: **git clone https://github.com/Pixel-Perfect-SDP/Vows-n-Veils.git**.
 2. Navigate to the project folder and install Angular dependencies by running **npm install**.
@@ -146,11 +146,11 @@ We recorded all planning meetings for Sprint 4 in Notion. The screenshot below d
 
 ---
 
-## Git Methodology
+## **Git Methodology**
 
 Our team used Git for version control to manage and collaborate on the wedding planning platform project. By following this methodology, we maintained a clean, organized, and collaborative codebase that supports efficient teamwork and reliable delivery.
 
-### **Branching strategy**
+### Branching strategy
 
 We followed a feature-branch workflow, where all developments for new features or enhancements occured on dedicated branches that were separate from the main branch. This approach ensures that the main branch always containd stable, working code and allowed team members to efficiently work independently.
 
@@ -169,28 +169,28 @@ The main branch, “main” would always contain production ready code. Feature 
 
 [https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 
-### **Commit messages**
+### Commit messages
 
 We followed a consistent commit message style, which helped to keep the history of the project clear and meaningful. Commit messages used present tense when describing work done and changes made, including additional details if needed, reference related issues and had a single logical change. Commits were made after each logical change and not at the end of a large task.
 
 An example of a commit message is “Add button for product update”.
 
-### **Collaboration and code review**
+### Collaboration and code review
 
 All code changes were made via Pull Requests. Team members reviewed each Pull Request to ensure code quality and functionality before merging. We also used GitHub Issues to track bugs throughout the project. Any merge conflicts that arised throughout the project were discussed and resolved between team members before pushing changes.
 
-### **Tool and resources**
+### Tool and resources
 
 - Github: Repository hosting, pull requests, issue tracking
 - CI/CD: Github Actions pipelines run tests on branches and pull requests to main code integrity.
 
 ---
 
-## Technology Stack
+## **Technology Stack**
 
 For this project we selected the following technology stack:
 
-### **Frontend: Angular (with HTML, CSS, and JavaScript )**
+### Frontend: Angular (with HTML, CSS, and JavaScript )
 
 We chose to use Angular to broaden our knowledge as web application developers and to gain experience using a framework that none of our group members had previously used.
 
@@ -202,19 +202,19 @@ In addition to Angular:
 - HTML is the standard language used when creating a Web App as it gives the skeleton of the web page and is an essential framework for content organization.
 - JavaScript gives the basic interactivity and dynamic behavior we will need in our web app to create a responsive and engaging user experience.
 
-### **Backened: Node.js**
+### Backened: Node.js*
 
 We chose node.js for the backend as it is one of the most widely used backend technologies, therefore ensuring a wide variety of documentation, community support, and resources available if we run into challenges throughout the project.
 
 **Node.js** offers the advantage of being consistent in terms of the backend and the frontend, which both use JavaScript. There are also many packages available to use with Node.js via the npm or Node Package Manager, which provide access to several tools and libraries that will streamline development and enhance the functionality of our web application.
 
-### **Database: Firebase**
+### Database: Firebase
 
 We decided to use Firebase as our database for this project as many of our group members were familiar with the platform through previous projects. This prior experience allowed us to work more efficiently and use existing knowledge.
 
 Firebase also simplified Authentication as it provided built-in functionality that ensured security. In addition Firebase offered a centralized environment for managing the projects data collections and tables in a single centralized database.
 
-### **Hosting and Infrastructure: Microsoft Azure**
+### Hosting and Infrastructure: Microsoft Azure
 
 We decided to use Microsoft Azure for the hosting and infrastructure.. As students at the University of the Witwatersrand we are allocated credits which we used to deploy the static web application without additional costs.
 
@@ -222,9 +222,9 @@ Our team also had prior experience using Azure and were easily able to link it t
 
 ---
 
-## Project management methodology
+## **Project management methodology**
 
-### **Chosen Methodology: Scrum**
+### Chosen Methodology: Scrum
 
 For this project, we chose to adopt the Scrum methodology, an Agile framework that is well-suited for managing complex, and evolving projects like our wedding planning platform. Scrum emphasizes iterative development, collaboration, and continuous feedback, which allowed our team to maintain flexibility as the project progresses.
 
@@ -235,7 +235,7 @@ Scrum was selected because it allowed for effective teamwork through defined rol
 - Scrum guide: [https://www.projectmanager.com/blog/guide-to-scrum-ceremonies](https://www.projectmanager.com/blog/guide-to-scrum-ceremonies)
 - Agile framework: [https://www.mendix.com/agile-framework/](https://www.mendix.com/agile-framework/)
 
-### **Tools used: Notion**
+### Tools used: Notion
 
 We used Notion as our primary workspace for planning and tracking tasks throughout the project. Notion allowed us to centralize project artifacts and allow collaboration for organization and transparency.
 
@@ -251,7 +251,7 @@ We documented all Scrum ceremonies including daily stand-ups, sprint planning, s
 
 [https://pinnate-diagram-9fc.notion.site/Scrum-23c2a298f77b8035a54cdb1291535c77?source=copy_link](https://pinnate-diagram-9fc.notion.site/Scrum-23c2a298f77b8035a54cdb1291535c77?source=copy_link).
 
-### **Project procedure**
+### Project procedure
 
 We planned the project in timed sprints. At the start of each sprint, we held a sprint planning meeting in order to select backlog items to complete and assign tasks to members for that sprint. Daily stand-up meetings were held to synchronize team work, discuss progress and identify obstacles that team members may be facing. Tasks were regularly tracked on the Notion task board to reflect its current status and ensure accountability. At the end of the sprint, sprint reviews and sprint retrospectives allowed us to demonstrate progress, gather feedback and discuss improvements for future sprints. Git and Github were used for version control, managing feature branches and collaboration on code.
 
@@ -259,13 +259,13 @@ This structured approach allowed us to deliver work iteratively and adapt to cha
 
 ---
 
-## Initial design and Development plan
+## **Initial design and Development plan**
 
-### **Purpose and objective**
+### Purpose and objective
 
 Vows & Veils is a centralized platform that simplifies wedding planning for couples and makes RSVP management seamless for guests. Couples can plan every aspect of their wedding, from tracking RSVPs to selecting venues and vendor services. Guests can easily confirm attendance and provide necessary details, without unnecessary steps or confusion. The platform also allows companies, such as wedding venues and vendors, to offer their services directly on the site, enabling couples and guests to select and manage services efficiently.
 
-### **Core features**
+### Core features
 
 For guests:
 
@@ -289,7 +289,7 @@ For companies:
 - Add new venues or vendor services to company profile.
 - Track orders made by couples and be able to accept/reject orders.
 
-### **Technical approach**
+### Technical approach
 
 **Frontend:**
 
@@ -306,7 +306,7 @@ API’s and integrations:
 - EventData API– Event metadata.
 - Export API– Provide downloadable event data.
 
-### **Development roadmap**
+### Development roadmap
 
 The goal of the development roadmap was to outline a clear, step-by-step approach for building the wedding planning platform from initial setup to final launch, seperate from sprint goals. It broke the project into manageable phases within our sprints, ensuring that core features are developed first, followed by enhanced features and functionality. This structured approach helped maintain focus, and ensured that each goal delivers value, leading to a user-friendly platform that met the needs of both couples and guests.
 
@@ -320,7 +320,7 @@ The goal of the development roadmap was to outline a clear, step-by-step approac
 | 6 - Launching | - Final touches | Platform is ready to launch |
 
 
-### **Wireframes and Mockups**
+### Wireframes and Mockup
 
 <u>Couples homepage:</u>
 
@@ -386,16 +386,16 @@ The goal of the development roadmap was to outline a clear, step-by-step approac
 
 ---
 
-## Design documents
+## **Design documents**
 
-**Deployment diagram:**
+Deployment diagram:
 
 <img src="image%2025.png" alt="image" width="600">
 
 
 Component diagram:
 
-<img src="Screenshot_2025-09-02_120845.png" alt="image" width="600">
+<img src="newComponent.jpg" alt="image" width="600">
 
 Use case diagram:
 
@@ -403,9 +403,9 @@ Use case diagram:
 
 Class diagram:
 
-<img src="classdiagramsdp-Photoroom.png" alt="image" width="600">
+<img src="newClass.png" alt="image" width="600">
 
-**Sequence Diagrams:**
+Sequence Diagrams:
 
 Homepage → Routes: page load (directed to event form or homepage)
 
@@ -433,7 +433,7 @@ Invitations page → Template Selection and Change of Template
 
 ---
 
-## User stories and their accompanying user acceptance cases
+## **User stories and their accompanying user acceptance cases**
 
 ### Sprint 1
 
@@ -693,7 +693,7 @@ Given that there is a system or network error during deletion, when the couple a
 
 ---
 
-## API Integration
+## **API Integration**
 
 ### External API
 
@@ -733,6 +733,35 @@ The team closely followed the official Hugging Face documentation, which provide
 
 [https://huggingface.co/docs/inference-providers/en/tasks/chat-completion](https://huggingface.co/docs/inference-providers/en/tasks/chat-completion)
 
+### Another groups API
+ It was extremely difficult to find another group to collaborate with, as many were unresponsive or their APIs were broken
+ and unreliable. This created significant delays in our integration process, forcing us to test multiple endpoints and make
+ last-minute adjustments to ensure our project could still demonstrate functional API integration.
+ The homepage component integrates with Orion Hiking LogBook API to fetch and display nearby trails on the vent
+ dashboard. The implementation sends a GET request to https://orion-api-qeyv.onrender.com/api/trails/near?latitude=
+26.000&longitude=28.000 and renders details of the first nearby trail, including the photo, name, description, distance,
+ difficulty, and a link to open the location in Google Maps.
+
+ The component normalizes the API response to handle inconsistent key naming and ensures stable template bindings.
+ Error handling and loading indicators were implemented to improve reliability and user experience.
+
+ Currently, the implementation uses hardcoded coordinates and a static URL for demonstration purposes. In the next
+ phase, this will be replaced with dynamic coordinates automatically derived from the user’s wedding venue. This
+ adjustment was made because of persistent integration issues with the original event management group’s API, leading
+ the team to adopt the Hiking LogBook service as a stable data source.
+
+ Even though the Orion Hiking LogBook API was originally intended for hiking purposes, it works well within the Vows
+ & Veils project. Couples planning their weddings may want to find nearby scenic trails for engagement or wedding
+ photos, post-ceremony walks, or simply to explore beautiful natural spots close to their chosen venue. This adds an
+ extra layer of personalization and convenience to the user experience, helping couples plan memorable photo sessions
+ or outdoor moments as part of their event.
+
+ Future improvements will include using environment-based configuration for API endpoints, implementing a trail type
+script interface for better type safety, and adding caching and retry logic.
+
+ Despite the challenges, the team felt relieved and proud to have successfully integrated a working API in the end.
+ Although it wasn’t the original plan, this experience strengthened our teamwork and adaptability under pressure.
+
 
 ### Exposing our API
 
@@ -743,7 +772,7 @@ Swagger Link: [https://site–vowsandveils–5dl8fyl4jyqm.code.run/api-docs/](ht
 
 ---
 
-## User Feedback
+## **User Feedback**
 
 ### First User Feeback form
 
@@ -888,7 +917,7 @@ Feedback indicated that users did not know they had to include a guest email whe
 
 ---
 
-## Bug Tracker
+## **Bug Tracker**
 
 Our project used Github Issues as the bug tracking tool. Github Issues allowed us to log bugs, assign them to team members, prioritize tasks, and track progress directly within our project repository. This ensured that all bugs were documented and visible to the whole team in order to be resolved. 
 
@@ -912,18 +941,18 @@ We follow a standard Github Issues workflow whereby bugs are,
 
 ### Activity and communication
 
-- **Number of Issues: 8** bugs were logged in Github Issues during the project. Each issue was updated regularly until resolution, ensuring progress was visible to the whole team.
+- **Number of Issues:** 23 bugs were logged in Github Issues during the project. Each issue was updated regularly until resolution, ensuring progress was visible to the whole team.
 - **Team Communication:** Team members discussed bug causes, suggested solutions, and confirmed fixes in project meetings. Additionally, commits were linked to corresponding issues to show which changes addressed each bug.
 
 ### Proof
 
 The screenshot below shows that our team actively used Github Issues to track bugs throughout the project. It shows that all issues were logged, assigned, and closed during development. 
 
-<img src="image%2044.png" alt="image" width="600">
+<img src="newBug.png" alt="image" width="600">
 
 ---
 
-## Database documentation
+## **Database documentation**
 
 For this project, it was decided to use Firebase Firestore as our database. 
 
@@ -996,7 +1025,7 @@ Updates to documents in Firestore correspond to actions in the application, such
 
 ---
 
-## Third-party code documentation
+## **Third-party code documentation**
 
 ### Visual Crossing weather API
 
@@ -1017,6 +1046,22 @@ To improve platform usability and provide real-time user support, we integrated 
 The integration was implemented by connecting the chatbot interface to the Hugging Face API endpoint. When a user sends a message, the system forwards it to the API, which returns a context-aware response that is displayed in the chat window. Error-handling mechanisms were included to maintain reliability in cases of connection failures or invalid responses, ensuring smooth and uninterrupted chatbot interactions.
 
 The team utilized official Hugging Face documentation to guide the integration process, including API request formatting and response management. Alternative APIs, such as OpenAI’s GPT and Google Dialogflow, were explored; however, Hugging Face was selected for its balance of flexibility, affordability, and ease of integration. Through this integration, the team effectively improved accessibility and user support within the platform while maintaining a scalable and efficient technical solution.
+
+### Another groups API
+**Orion LogBook API**
+
+ Due to persistent issues with other groups’ APIs and limited responsiveness, the team decided to integrate the Orion
+ Hiking LogBook API as a stable third-party solution. This API fetches and displays nearby hiking trails on the event
+ dashboard, enriching the Vows & Veils platform with additional location-based features.
+ Although originally intended for hiking enthusiasts, this API aligns well with the project’s purpose. Couples may wish
+ to explore nearby scenic trails for wedding or engagement photoshoots, post-ceremony walks, or simply to discover
+ picturesque outdoor spots close to their venue. This addition makes the platform more engaging and offers practical,
+ real-world value for users planning their special day.
+ Integration involved fetching trail data from the endpoint, normalizing inconsistent response keys and displaying trail details.
+
+ Despite initial challenges in securing a functional external API, the team successfully integrated the Orion Hiking Log
+Book API and demonstrated reliable third-party data usage. Completing this feature under time constraints strengthened
+ collaboration, adaptability, and confidence in handling external dependencies effectively.
 
 ### Firebase Authentication
 
@@ -1049,7 +1094,7 @@ https://firebase.google.com/docs/auth/web/google-signin
 
 ---
 
-## Testing
+## **Testing**
 
 ### Automated testing
 
@@ -1403,7 +1448,7 @@ User feedback was positive, with 100% of participants rating the website 4 or 5 
 
 ---
 
-## Security audit report
+## **Security audit report**
 Two supply chain attacks were reported in the Node Package Manager ecosystem, affecting widely used packages such as **debug**, **chalk**, and **tinycolor**. Since our project makes use of NPM dependencies, this incident provided an opportunity to audit our codebase and ensure we are not compromised by these attacks.
 
 ### Causes of the supply chain attacks
