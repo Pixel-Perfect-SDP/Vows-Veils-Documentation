@@ -399,7 +399,8 @@ Component diagram:
 
 Use case diagram:
 
-<img src="Use_Case_Diagram.png" alt="image" width="600">
+<img src="newUse1.png" alt="image" width="600">
+<img src="newUse2.png" alt="image" width="600">
 
 Class diagram:
 
